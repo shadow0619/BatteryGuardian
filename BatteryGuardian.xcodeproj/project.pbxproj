@@ -27,6 +27,11 @@
 		D3A7FBC416F5817C006BA947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9116F5817C006BA947 /* Foundation.framework */; };
 		D3A7FBCC16F5817C006BA947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBCA16F5817C006BA947 /* InfoPlist.strings */; };
 		D3A7FBCF16F5817C006BA947 /* BatteryGuardianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7FBCE16F5817C006BA947 /* BatteryGuardianTests.m */; };
+		D3B5EE7616F587B90050F057 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE7516F587B90050F057 /* HomeViewController.m */; };
+		D3B5EE7916F587FE0050F057 /* AllBatteriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE7816F587FE0050F057 /* AllBatteriesViewController.m */; };
+		D3B5EE8216F5892C0050F057 /* SQLiteAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8116F5892C0050F057 /* SQLiteAdaptor.m */; };
+		D3B5EE8516F589530050F057 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8416F589530050F057 /* MessageCenter.m */; };
+		D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,16 @@
 		D3A7FBCB16F5817C006BA947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3A7FBCD16F5817C006BA947 /* BatteryGuardianTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatteryGuardianTests.h; sourceTree = "<group>"; };
 		D3A7FBCE16F5817C006BA947 /* BatteryGuardianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BatteryGuardianTests.m; sourceTree = "<group>"; };
+		D3B5EE7416F587B90050F057 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D3B5EE7516F587B90050F057 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D3B5EE7716F587FE0050F057 /* AllBatteriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBatteriesViewController.h; sourceTree = "<group>"; };
+		D3B5EE7816F587FE0050F057 /* AllBatteriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBatteriesViewController.m; sourceTree = "<group>"; };
+		D3B5EE8016F5892C0050F057 /* SQLiteAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteAdaptor.h; sourceTree = "<group>"; };
+		D3B5EE8116F5892C0050F057 /* SQLiteAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteAdaptor.m; sourceTree = "<group>"; };
+		D3B5EE8316F589530050F057 /* MessageCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCenter.h; sourceTree = "<group>"; };
+		D3B5EE8416F589530050F057 /* MessageCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenter.m; sourceTree = "<group>"; };
+		D3B5EE8616F58A2F0050F057 /* AddEditBatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEditBatteryViewController.h; sourceTree = "<group>"; };
+		D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEditBatteryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +142,16 @@
 				D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */,
 				D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */,
 				D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */,
+				D3B5EE8016F5892C0050F057 /* SQLiteAdaptor.h */,
+				D3B5EE8116F5892C0050F057 /* SQLiteAdaptor.m */,
+				D3B5EE8316F589530050F057 /* MessageCenter.h */,
+				D3B5EE8416F589530050F057 /* MessageCenter.m */,
+				D3B5EE8616F58A2F0050F057 /* AddEditBatteryViewController.h */,
+				D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */,
+				D3B5EE7716F587FE0050F057 /* AllBatteriesViewController.h */,
+				D3B5EE7816F587FE0050F057 /* AllBatteriesViewController.m */,
+				D3B5EE7416F587B90050F057 /* HomeViewController.h */,
+				D3B5EE7516F587B90050F057 /* HomeViewController.m */,
 				D3A7FBAA16F5817C006BA947 /* MainStoryboard_iPad.storyboard */,
 				D3A7FBB016F5817C006BA947 /* first.png */,
 				D3A7FBB216F5817C006BA947 /* first@2x.png */,
@@ -287,6 +312,11 @@
 			files = (
 				D3A7FB9C16F5817C006BA947 /* main.m in Sources */,
 				D3A7FBA016F5817C006BA947 /* BatteryGuardianAppDelegate.m in Sources */,
+				D3B5EE7616F587B90050F057 /* HomeViewController.m in Sources */,
+				D3B5EE7916F587FE0050F057 /* AllBatteriesViewController.m in Sources */,
+				D3B5EE8216F5892C0050F057 /* SQLiteAdaptor.m in Sources */,
+				D3B5EE8516F589530050F057 /* MessageCenter.m in Sources */,
+				D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +507,7 @@
 				D3A7FBD416F5817C006BA947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3A7FBD516F5817C006BA947 /* Build configuration list for PBXNativeTarget "BatteryGuardianTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +516,7 @@
 				D3A7FBD716F5817C006BA947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

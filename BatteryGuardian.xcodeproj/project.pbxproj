@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3A7FB9016F5817C006BA947 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB8F16F5817C006BA947 /* UIKit.framework */; };
+		D3A7FB9216F5817C006BA947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9116F5817C006BA947 /* Foundation.framework */; };
+		D3A7FB9416F5817C006BA947 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9316F5817C006BA947 /* CoreGraphics.framework */; };
+		D3A7FB9A16F5817C006BA947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FB9816F5817C006BA947 /* InfoPlist.strings */; };
+		D3A7FB9C16F5817C006BA947 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7FB9B16F5817C006BA947 /* main.m */; };
+		D3A7FBA016F5817C006BA947 /* BatteryGuardianAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */; };
+		D3A7FBA216F5817C006BA947 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBA116F5817C006BA947 /* Default.png */; };
+		D3A7FBA416F5817C006BA947 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBA316F5817C006BA947 /* Default@2x.png */; };
+		D3A7FBA616F5817C006BA947 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBA516F5817C006BA947 /* Default-568h@2x.png */; };
+		D3A7FBA916F5817C006BA947 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */; };
+		D3A7FBAC16F5817C006BA947 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBAA16F5817C006BA947 /* MainStoryboard_iPad.storyboard */; };
+		D3A7FBB116F5817C006BA947 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBB016F5817C006BA947 /* first.png */; };
+		D3A7FBB316F5817C006BA947 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBB216F5817C006BA947 /* first@2x.png */; };
+		D3A7FBB816F5817C006BA947 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBB716F5817C006BA947 /* second.png */; };
+		D3A7FBBA16F5817C006BA947 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBB916F5817C006BA947 /* second@2x.png */; };
+		D3A7FBC216F5817C006BA947 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FBC116F5817C006BA947 /* SenTestingKit.framework */; };
+		D3A7FBC316F5817C006BA947 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB8F16F5817C006BA947 /* UIKit.framework */; };
+		D3A7FBC416F5817C006BA947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9116F5817C006BA947 /* Foundation.framework */; };
+		D3A7FBCC16F5817C006BA947 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A7FBCA16F5817C006BA947 /* InfoPlist.strings */; };
+		D3A7FBCF16F5817C006BA947 /* BatteryGuardianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A7FBCE16F5817C006BA947 /* BatteryGuardianTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3A7FBC516F5817C006BA947 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3A7FB8416F5817C006BA947 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3A7FB8B16F5817C006BA947;
+			remoteInfo = BatteryGuardian;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3A7FB8C16F5817C006BA947 /* BatteryGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3A7FB8F16F5817C006BA947 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D3A7FB9116F5817C006BA947 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D3A7FB9316F5817C006BA947 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D3A7FB9716F5817C006BA947 /* BatteryGuardian-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BatteryGuardian-Info.plist"; sourceTree = "<group>"; };
+		D3A7FB9916F5817C006BA947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3A7FB9B16F5817C006BA947 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D3A7FB9D16F5817C006BA947 /* BatteryGuardian-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BatteryGuardian-Prefix.pch"; sourceTree = "<group>"; };
+		D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatteryGuardianAppDelegate.h; sourceTree = "<group>"; };
+		D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BatteryGuardianAppDelegate.m; sourceTree = "<group>"; };
+		D3A7FBA116F5817C006BA947 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D3A7FBA316F5817C006BA947 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D3A7FBA516F5817C006BA947 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D3A7FBA816F5817C006BA947 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		D3A7FBAB16F5817C006BA947 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		D3A7FBB016F5817C006BA947 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		D3A7FBB216F5817C006BA947 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		D3A7FBB716F5817C006BA947 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		D3A7FBB916F5817C006BA947 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		D3A7FBC016F5817C006BA947 /* BatteryGuardianTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryGuardianTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3A7FBC116F5817C006BA947 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3A7FBC916F5817C006BA947 /* BatteryGuardianTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BatteryGuardianTests-Info.plist"; sourceTree = "<group>"; };
+		D3A7FBCB16F5817C006BA947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3A7FBCD16F5817C006BA947 /* BatteryGuardianTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BatteryGuardianTests.h; sourceTree = "<group>"; };
+		D3A7FBCE16F5817C006BA947 /* BatteryGuardianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BatteryGuardianTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3A7FB8916F5817C006BA947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FB9016F5817C006BA947 /* UIKit.framework in Frameworks */,
+				D3A7FB9216F5817C006BA947 /* Foundation.framework in Frameworks */,
+				D3A7FB9416F5817C006BA947 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3A7FBBC16F5817C006BA947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FBC216F5817C006BA947 /* SenTestingKit.framework in Frameworks */,
+				D3A7FBC316F5817C006BA947 /* UIKit.framework in Frameworks */,
+				D3A7FBC416F5817C006BA947 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3A7FB8316F5817C006BA947 = {
+			isa = PBXGroup;
+			children = (
+				D3A7FB9516F5817C006BA947 /* BatteryGuardian */,
+				D3A7FBC716F5817C006BA947 /* BatteryGuardianTests */,
+				D3A7FB8E16F5817C006BA947 /* Frameworks */,
+				D3A7FB8D16F5817C006BA947 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3A7FB8D16F5817C006BA947 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FB8C16F5817C006BA947 /* BatteryGuardian.app */,
+				D3A7FBC016F5817C006BA947 /* BatteryGuardianTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3A7FB8E16F5817C006BA947 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FB8F16F5817C006BA947 /* UIKit.framework */,
+				D3A7FB9116F5817C006BA947 /* Foundation.framework */,
+				D3A7FB9316F5817C006BA947 /* CoreGraphics.framework */,
+				D3A7FBC116F5817C006BA947 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3A7FB9516F5817C006BA947 /* BatteryGuardian */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */,
+				D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */,
+				D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */,
+				D3A7FBAA16F5817C006BA947 /* MainStoryboard_iPad.storyboard */,
+				D3A7FBB016F5817C006BA947 /* first.png */,
+				D3A7FBB216F5817C006BA947 /* first@2x.png */,
+				D3A7FBB716F5817C006BA947 /* second.png */,
+				D3A7FBB916F5817C006BA947 /* second@2x.png */,
+				D3A7FB9616F5817C006BA947 /* Supporting Files */,
+			);
+			path = BatteryGuardian;
+			sourceTree = "<group>";
+		};
+		D3A7FB9616F5817C006BA947 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FB9716F5817C006BA947 /* BatteryGuardian-Info.plist */,
+				D3A7FB9816F5817C006BA947 /* InfoPlist.strings */,
+				D3A7FB9B16F5817C006BA947 /* main.m */,
+				D3A7FB9D16F5817C006BA947 /* BatteryGuardian-Prefix.pch */,
+				D3A7FBA116F5817C006BA947 /* Default.png */,
+				D3A7FBA316F5817C006BA947 /* Default@2x.png */,
+				D3A7FBA516F5817C006BA947 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3A7FBC716F5817C006BA947 /* BatteryGuardianTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FBCD16F5817C006BA947 /* BatteryGuardianTests.h */,
+				D3A7FBCE16F5817C006BA947 /* BatteryGuardianTests.m */,
+				D3A7FBC816F5817C006BA947 /* Supporting Files */,
+			);
+			path = BatteryGuardianTests;
+			sourceTree = "<group>";
+		};
+		D3A7FBC816F5817C006BA947 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3A7FBC916F5817C006BA947 /* BatteryGuardianTests-Info.plist */,
+				D3A7FBCA16F5817C006BA947 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3A7FB8B16F5817C006BA947 /* BatteryGuardian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3A7FBD216F5817C006BA947 /* Build configuration list for PBXNativeTarget "BatteryGuardian" */;
+			buildPhases = (
+				D3A7FB8816F5817C006BA947 /* Sources */,
+				D3A7FB8916F5817C006BA947 /* Frameworks */,
+				D3A7FB8A16F5817C006BA947 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatteryGuardian;
+			productName = BatteryGuardian;
+			productReference = D3A7FB8C16F5817C006BA947 /* BatteryGuardian.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3A7FBBF16F5817C006BA947 /* BatteryGuardianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3A7FBD516F5817C006BA947 /* Build configuration list for PBXNativeTarget "BatteryGuardianTests" */;
+			buildPhases = (
+				D3A7FBBB16F5817C006BA947 /* Sources */,
+				D3A7FBBC16F5817C006BA947 /* Frameworks */,
+				D3A7FBBD16F5817C006BA947 /* Resources */,
+				D3A7FBBE16F5817C006BA947 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3A7FBC616F5817C006BA947 /* PBXTargetDependency */,
+			);
+			name = BatteryGuardianTests;
+			productName = BatteryGuardianTests;
+			productReference = D3A7FBC016F5817C006BA947 /* BatteryGuardianTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3A7FB8416F5817C006BA947 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BatteryGuardian;
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = D3A7FB8716F5817C006BA947 /* Build configuration list for PBXProject "BatteryGuardian" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3A7FB8316F5817C006BA947;
+			productRefGroup = D3A7FB8D16F5817C006BA947 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3A7FB8B16F5817C006BA947 /* BatteryGuardian */,
+				D3A7FBBF16F5817C006BA947 /* BatteryGuardianTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3A7FB8A16F5817C006BA947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FB9A16F5817C006BA947 /* InfoPlist.strings in Resources */,
+				D3A7FBA216F5817C006BA947 /* Default.png in Resources */,
+				D3A7FBA416F5817C006BA947 /* Default@2x.png in Resources */,
+				D3A7FBA616F5817C006BA947 /* Default-568h@2x.png in Resources */,
+				D3A7FBA916F5817C006BA947 /* MainStoryboard_iPhone.storyboard in Resources */,
+				D3A7FBAC16F5817C006BA947 /* MainStoryboard_iPad.storyboard in Resources */,
+				D3A7FBB116F5817C006BA947 /* first.png in Resources */,
+				D3A7FBB316F5817C006BA947 /* first@2x.png in Resources */,
+				D3A7FBB816F5817C006BA947 /* second.png in Resources */,
+				D3A7FBBA16F5817C006BA947 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3A7FBBD16F5817C006BA947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FBCC16F5817C006BA947 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3A7FBBE16F5817C006BA947 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3A7FB8816F5817C006BA947 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FB9C16F5817C006BA947 /* main.m in Sources */,
+				D3A7FBA016F5817C006BA947 /* BatteryGuardianAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3A7FBBB16F5817C006BA947 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A7FBCF16F5817C006BA947 /* BatteryGuardianTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3A7FBC616F5817C006BA947 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3A7FB8B16F5817C006BA947 /* BatteryGuardian */;
+			targetProxy = D3A7FBC516F5817C006BA947 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3A7FB9816F5817C006BA947 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A7FB9916F5817C006BA947 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A7FBA816F5817C006BA947 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		D3A7FBAA16F5817C006BA947 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A7FBAB16F5817C006BA947 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		D3A7FBCA16F5817C006BA947 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3A7FBCB16F5817C006BA947 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3A7FBD016F5817C006BA947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3A7FBD116F5817C006BA947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3A7FBD316F5817C006BA947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BatteryGuardian/BatteryGuardian-Prefix.pch";
+				INFOPLIST_FILE = "BatteryGuardian/BatteryGuardian-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D3A7FBD416F5817C006BA947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BatteryGuardian/BatteryGuardian-Prefix.pch";
+				INFOPLIST_FILE = "BatteryGuardian/BatteryGuardian-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D3A7FBD616F5817C006BA947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BatteryGuardian.app/BatteryGuardian";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BatteryGuardian/BatteryGuardian-Prefix.pch";
+				INFOPLIST_FILE = "BatteryGuardianTests/BatteryGuardianTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D3A7FBD716F5817C006BA947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BatteryGuardian.app/BatteryGuardian";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BatteryGuardian/BatteryGuardian-Prefix.pch";
+				INFOPLIST_FILE = "BatteryGuardianTests/BatteryGuardianTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3A7FB8716F5817C006BA947 /* Build configuration list for PBXProject "BatteryGuardian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3A7FBD016F5817C006BA947 /* Debug */,
+				D3A7FBD116F5817C006BA947 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3A7FBD216F5817C006BA947 /* Build configuration list for PBXNativeTarget "BatteryGuardian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3A7FBD316F5817C006BA947 /* Debug */,
+				D3A7FBD416F5817C006BA947 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3A7FBD516F5817C006BA947 /* Build configuration list for PBXNativeTarget "BatteryGuardianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3A7FBD616F5817C006BA947 /* Debug */,
+				D3A7FBD716F5817C006BA947 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3A7FB8416F5817C006BA947 /* Project object */;
+}

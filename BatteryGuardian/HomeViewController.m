@@ -13,6 +13,7 @@
 @end
 
 @implementation HomeViewController
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

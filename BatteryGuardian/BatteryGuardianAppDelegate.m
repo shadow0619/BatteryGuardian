@@ -10,6 +10,8 @@
 #import "AllBatteriesViewController.h"
 #import "BatteryInfo.h"
 
+static BatteryGuardianAppDelegate *sharedInstance;
+
 @implementation BatteryGuardianAppDelegate
 
 @synthesize window = _window;
@@ -17,6 +19,25 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
+@synthesize batteriesViewController;
+
+-(id)init
+{
+    if(sharedInstance)
+    {
+        
+    }
+    
+    self = [super init];
+    sharedInstance = self;
+    return self;
+}
+
++(BatteryGuardianAppDelegate *) sharedAppDelegate
+{
+    return sharedInstance;
+}
 
 /*****************************
  Core Data Code
@@ -132,14 +153,14 @@
     
     
     /*Code Point that I'm having problem with.  Need to pass the context to the AllBatteries View Controller*/
-    
-    
-//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController.tabBarController;
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;//.tabBarController;
 //    UITabBarController *tabBarController = (UITabBarController *)navigationController.tabBarController;
 //    UINavigationController *navi = (UINavigationController *)tabBarController.navigationController;
 //    NSArray *childControllers = navi.childViewControllers;
 //   AllBatteriesViewController *controller = (AllBatteriesViewController *)navigationController.topViewController;
 //   controller.managedObjectContext = self.managedObjectContext;
+    
+    batteriesViewController.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }

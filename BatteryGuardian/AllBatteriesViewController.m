@@ -7,6 +7,7 @@
 //
 
 #import "AllBatteriesViewController.h"
+#import "BatteryGuardianAppDelegate.h"
 #import "BatteryInfo.h"
 
 @interface AllBatteriesViewController ()
@@ -34,8 +35,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    BatteryGuardianAppDelegate *ad = [BatteryGuardianAppDelegate sharedAppDelegate];
+    
+    managedObjectContext = ad.managedObjectContext;
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BatteryInfo" inManagedObjectContext:managedObjectContext];
+    
+
     
     [fetchRequest setEntity: entity];
     NSError *error;
@@ -63,8 +70,8 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    
-    cell.textLabel.text = [batteryInfos objectAtIndex:[indexPath row]];
+    BatteryInfo *bi = [batteryInfos objectAtIndex: [indexPath row]];
+    cell.textLabel.text = bi.batteryDescription;
     return cell;
 }
 

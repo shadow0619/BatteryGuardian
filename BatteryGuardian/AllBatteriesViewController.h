@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllBatteriesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AllBatteriesViewController : UITableViewController //<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSArray *batteryInfos;

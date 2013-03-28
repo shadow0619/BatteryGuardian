@@ -21,6 +21,8 @@
 
 @synthesize tableViewController;
 
+@synthesize addButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -47,6 +49,11 @@
     [fetchRequest setEntity: entity];
     NSError *error;
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
+    addButton.enabled = NO;
+    self.navigationItem.rightBarButtonItem = self.addButton;
+    
     batteryInfos = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 }
 
@@ -65,13 +72,18 @@
 {
     static NSString *cellIdentifier = @"Cell";
     
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc ] init];
+    [dateFormater setDateFormat:@"dd-MM-YYYY"];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     BatteryInfo *bi = [batteryInfos objectAtIndex: [indexPath row]];
-    cell.textLabel.text = bi.batteryDescription;
+    cell.textLabel.text = [NSString stringWithFormat: @"%@", bi.batteryDescription];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Last Charged: %@   ", [dateFormater stringFromDate:bi.lastChargedDate]];
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
 }
 

@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSArray *batteryInfos;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewController;
 
+@property (nonatomic, retain) UIBarButtonItem *addButton;
+
 @end

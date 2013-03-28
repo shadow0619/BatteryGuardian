@@ -2,7 +2,7 @@
 //  BatteryInfo.m
 //  BatteryGuardian
 //
-//  Created by Drew Thomas on 3/19/13.
+//  Created by Drew Thomas on 3/27/13.
 //
 //
 
@@ -13,5 +13,6 @@
 
 @dynamic batteryDescription;
 @dynamic lastChargedDate;
+@dynamic name;
 
 @end

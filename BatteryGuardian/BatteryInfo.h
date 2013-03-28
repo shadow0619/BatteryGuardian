@@ -2,7 +2,7 @@
 //  BatteryInfo.h
 //  BatteryGuardian
 //
-//  Created by Drew Thomas on 3/19/13.
+//  Created by Drew Thomas on 3/27/13.
 //
 //
 
@@ -13,6 +13,7 @@
 @interface BatteryInfo : NSManagedObject
 
 @property (nonatomic, retain) NSString * batteryDescription;
-@property (nonatomic, retain) NSString * lastChargedDate;
+@property (nonatomic, retain) NSDate * lastChargedDate;
+@property (nonatomic, retain) NSString * name;
 
 @end

@@ -66,9 +66,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="3pB-30-5QN" kind="push" id="IYw-R6-LFq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,32 +78,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdA-ru-ibd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1146" y="535"/>
-        </scene>
-        <!--Add Update Battery View Controller - AddEditBattery-->
-        <scene sceneID="ptb-a7-mq0">
-            <objects>
-                <viewController title="AddEditBattery" id="3pB-30-5QN" customClass="AddUpdateBatteryViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vqd-TR-4tz">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add-Edit Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-Rr-iLv">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Aul-Rr-iLv" firstAttribute="leading" secondItem="vqd-TR-4tz" secondAttribute="leading" constant="97" id="IVk-hh-tpW"/>
-                            <constraint firstItem="Aul-Rr-iLv" firstAttribute="top" secondItem="vqd-TR-4tz" secondAttribute="top" constant="35" id="ehq-yM-n1x"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="wqH-KH-zkd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bB2-K1-req" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1567" y="535"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -131,20 +102,6 @@
     <resources>
         <image name="first" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="AllBatteriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllBatteriesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewController" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

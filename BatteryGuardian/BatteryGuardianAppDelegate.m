@@ -39,6 +39,8 @@ static BatteryGuardianAppDelegate *sharedInstance;
     return sharedInstance;
 }
 
+#pragma - Core Data
+
 /*****************************
  Core Data Code
  *****************************/
@@ -124,13 +126,14 @@ static BatteryGuardianAppDelegate *sharedInstance;
 {
     // Override point for customization after application launch.
     
-/*Test Code*/
+/*Test Code */
     NSManagedObjectContext *context = [self managedObjectContext];
     BatteryInfo *batteryInfo = [NSEntityDescription
                                        insertNewObjectForEntityForName:@"BatteryInfo"
                                        inManagedObjectContext:context];
     batteryInfo.batteryDescription =  @"SPC 2200mAh";
-    batteryInfo.lastChargedDate = @"2013-02-01";
+    batteryInfo.name = @"1-1";
+    batteryInfo.lastChargedDate = [NSDate date];
     
     NSError *error;
     if (![context save:&error]) {

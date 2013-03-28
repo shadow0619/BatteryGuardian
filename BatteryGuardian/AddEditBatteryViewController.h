@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AddEditBatteryViewController : NSObject
+@interface AddEditBatteryViewController : UIViewController
 
 @end

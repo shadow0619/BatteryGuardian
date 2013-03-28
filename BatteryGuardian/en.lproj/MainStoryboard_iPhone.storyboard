@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eUa-gX-Ic0">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="eUa-gX-Ic0">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -66,18 +66,43 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="64o-b1-FNW" kind="push" id="QzS-LG-PzB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LPL-HX-Iq8" id="CdA-oo-aKW"/>
-                            <outlet property="delegate" destination="LPL-HX-Iq8" id="fTk-bP-Isp"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="YMT-Ky-puW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdA-ru-ibd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="535"/>
+            <point key="canvasLocation" x="1102" y="407"/>
+        </scene>
+        <!--Add Edit Battery View Controller-->
+        <scene sceneID="K9H-dX-ze0">
+            <objects>
+                <viewController id="64o-b1-FNW" customClass="AddEditBatteryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NwX-4C-yjA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You Fucking made it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-HP-p0h">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ces-HP-p0h" firstAttribute="leading" secondItem="NwX-4C-yjA" secondAttribute="leading" constant="121" id="Dfm-Wh-Oi2"/>
+                            <constraint firstItem="Ces-HP-p0h" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="80" id="G94-Sl-bbm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tqr-BD-C90"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4B-Hz-YSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -102,6 +127,23 @@
     <resources>
         <image name="first" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="AddEditBatteryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEditBatteryViewController.h"/>
+        </class>
+        <class className="AllBatteriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllBatteriesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableViewController" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

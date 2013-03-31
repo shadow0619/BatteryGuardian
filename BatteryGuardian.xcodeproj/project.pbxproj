@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2AC1C6F616F919DA00D58A53 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC1C6F516F919DA00D58A53 /* CoreData.framework */; };
 		2AC1C6F916F91D4900D58A53 /* BatteryGuardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1C6F716F91D4900D58A53 /* BatteryGuardian.xcdatamodeld */; };
+		D395ABB91707F27800E1C752 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395ABB71707F27800E1C752 /* EventKit.framework */; };
+		D395ABBA1707F27800E1C752 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395ABB81707F27800E1C752 /* EventKitUI.framework */; };
 		D3A7FB9016F5817C006BA947 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB8F16F5817C006BA947 /* UIKit.framework */; };
 		D3A7FB9216F5817C006BA947 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9116F5817C006BA947 /* Foundation.framework */; };
 		D3A7FB9416F5817C006BA947 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB9316F5817C006BA947 /* CoreGraphics.framework */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		2AC1C6F516F919DA00D58A53 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2AC1C6F816F91D4900D58A53 /* BatteryGuardian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatteryGuardian.xcdatamodel; sourceTree = "<group>"; };
+		D395ABB71707F27800E1C752 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		D395ABB81707F27800E1C752 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		D3A7FB8C16F5817C006BA947 /* BatteryGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A7FB8F16F5817C006BA947 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3A7FB9116F5817C006BA947 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D395ABB91707F27800E1C752 /* EventKit.framework in Frameworks */,
+				D395ABBA1707F27800E1C752 /* EventKitUI.framework in Frameworks */,
 				2AC1C6F616F919DA00D58A53 /* CoreData.framework in Frameworks */,
 				D3A7FB9016F5817C006BA947 /* UIKit.framework in Frameworks */,
 				D3A7FB9216F5817C006BA947 /* Foundation.framework in Frameworks */,
@@ -136,6 +142,8 @@
 		D3A7FB8E16F5817C006BA947 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D395ABB71707F27800E1C752 /* EventKit.framework */,
+				D395ABB81707F27800E1C752 /* EventKitUI.framework */,
 				2AC1C6F516F919DA00D58A53 /* CoreData.framework */,
 				D3A7FB8F16F5817C006BA947 /* UIKit.framework */,
 				D3A7FB9116F5817C006BA947 /* Foundation.framework */,

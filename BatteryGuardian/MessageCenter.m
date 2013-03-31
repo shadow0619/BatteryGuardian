@@ -7,6 +7,7 @@
 //
 
 #import "MessageCenter.h"
+#import <EventKit/EventKit.h>
 
 @implementation MessageCenter
 
@@ -38,27 +39,38 @@
 
 -(void) calendarBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
 {
-    //Iterate through all local notifications and remove the existing one for this battery if it exists
-    UIApplication *app = [UIApplication sharedApplication];
-    NSArray *notifications = [app scheduledLocalNotifications];
+    //Iterate through all local calendar entries and remove the existing one for this battery if it exists
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    for(UILocalNotification *localNot in notifications)
+    //Set the future date, calendar, Predicate and finally fill the array to use for the controller
+    EKEventStore *eventStore = [[EKEventStore alloc]init];
+    NSDateComponents *comp = [[NSDateComponents alloc]init];
+    comp.day = -1;
+    NSDate *startDate = [calendar dateByAddingComponents:comp toDate:[NSDate date]options:0];
+    comp.year = 1;
+    NSDate *endDate = [calendar dateByAddingComponents:comp toDate:[NSDate date] options:0];
+    NSPredicate *pred = [eventStore predicateForEventsWithStartDate:startDate endDate:endDate calendars:nil];
+    NSArray *calendarEntries = [eventStore eventsMatchingPredicate:pred];
+    
+    for(EKEvent *eve in calendarEntries)
     {
-        if([localNot.alertBody hasPrefix:(batteryName)])
+        //If an entry is found that starts with the battery name remove it.
+        if([eve.title hasPrefix:(batteryName)])
         {
-            [app cancelLocalNotification:(localNot)];
+            NSError *err;
+            [eventStore removeEvent:eve span:EKSpanThisEvent commit:YES error:&err];
         }
     }
     
+    //Create the event
+    EKEvent *event = [EKEvent eventWithEventStore:eventStore];
+    event.title = [NSString stringWithFormat:@"%@ needs to be chared!!!!", batteryName];
+    event.startDate = notifyOn;
+    event.endDate = [[NSDate alloc] initWithTimeInterval:3600 sinceDate:event.startDate];
     
-    //Build the local notification
-    UILocalNotification *localNot = [[UILocalNotification alloc] init];
-    [localNot setAlertBody: [NSString stringWithFormat:@"%@ needs to be charged!!!", batteryName]];
-    [localNot setFireDate:(notifyOn)];
-    [localNot setTimeZone:[NSTimeZone defaultTimeZone]];
-    [localNot setAlertAction: @"View"];
-    
-    //call the sharedapplication instance to schedule a local notification
-    [app scheduleLocalNotification:localNot];
+    //Set the calendar and submit the event
+    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+    NSError *err;
+    bool didWork = [eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
 }
 @end

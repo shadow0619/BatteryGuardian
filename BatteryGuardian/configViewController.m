@@ -9,6 +9,9 @@
 #import "configViewController.h"
 
 @interface configViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segNotificationType;
+@property (weak, nonatomic) IBOutlet UISlider *sldNotifyDays;
+@property (weak, nonatomic) IBOutlet UILabel *lblNotifyDays;
 
 @end
 
@@ -33,6 +36,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)notifyDays_Changed:(id)sender
+{
+    [self.lblNotifyDays setText: [NSString stringWithFormat:@"%.0f", self.sldNotifyDays.value]];
+    //implement an update to the config
+}
+- (IBAction)segNotificationType_Changed:(id)sender
+{
+    //implement an update to the config
 }
 
 @end

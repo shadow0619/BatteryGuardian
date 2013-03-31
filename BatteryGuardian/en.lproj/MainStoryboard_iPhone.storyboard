@@ -26,7 +26,7 @@
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="159" id="dtd-RA-hOY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +36,7 @@
         <scene sceneID="3dx-pi-DMy">
             <objects>
                 <navigationController definesPresentationContext="YES" id="PiL-E5-BQL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Batteries" id="Kfg-as-02G"/>
+                    <tabBarItem key="tabBarItem" title="All Batteries" image="44-shoebox.png" id="Kfg-as-02G"/>
                     <navigationItem key="navigationItem" id="deZ-dY-aob"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QV7-cW-Wxp">
                         <autoresizingMask key="autoresizingMask"/>
@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="659" y="535"/>
         </scene>
-        <!--Config View Controller - Configuration-->
+        <!--Config View Controller - Config-->
         <scene sceneID="9cg-cK-C9W">
             <objects>
                 <viewController id="owO-iS-bJR" customClass="configViewController" sceneMemberID="viewController">
@@ -65,38 +65,52 @@
                                     <segment title="Notification"/>
                                     <segment title="Calendar"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segNotificationType_Changed:" destination="owO-iS-bJR" eventType="valueChanged" id="i31-su-60M"/>
+                                </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-Fw-lIg">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="hB4-FK-ti3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notification Type For Charge Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5I-MQ-nLl">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Days To Notify" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-zC-CQU">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Days To Notify: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-zC-CQU">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCq-pJ-5uu">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Rh6-PL-hmZ">
+                                <connections>
+                                    <action selector="notifyDays_Changed:" destination="owO-iS-bJR" eventType="valueChanged" id="UBR-OC-Wjq"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jV8-Fw-lIg" firstAttribute="centerX" secondItem="892-wI-cML" secondAttribute="centerX" type="default" id="0Ay-uq-Cvi"/>
-                            <constraint firstItem="rnJ-zC-CQU" firstAttribute="centerX" secondItem="jV8-Fw-lIg" secondAttribute="centerX" type="default" id="B6p-Jo-2jL"/>
+                            <constraint firstAttribute="trailing" secondItem="mCq-pJ-5uu" secondAttribute="trailing" constant="89" id="0kl-cr-LmX"/>
+                            <constraint firstItem="Rh6-PL-hmZ" firstAttribute="trailing" secondItem="ypT-CT-kL9" secondAttribute="trailing" type="default" id="9UN-Y4-g4z"/>
+                            <constraint firstItem="rnJ-zC-CQU" firstAttribute="leading" secondItem="892-wI-cML" secondAttribute="leading" constant="69" id="C3e-eo-ycc"/>
+                            <constraint firstItem="ypT-CT-kL9" firstAttribute="centerX" secondItem="892-wI-cML" secondAttribute="centerX" type="default" id="Ftt-Ab-HXM"/>
+                            <constraint firstItem="rnJ-zC-CQU" firstAttribute="top" secondItem="892-wI-cML" secondAttribute="top" constant="112" id="HAK-Qk-HUX"/>
                             <constraint firstItem="F5I-MQ-nLl" firstAttribute="centerX" secondItem="ypT-CT-kL9" secondAttribute="centerX" type="default" id="MGe-vH-qtl"/>
-                            <constraint firstItem="rnJ-zC-CQU" firstAttribute="centerX" secondItem="ypT-CT-kL9" secondAttribute="centerX" type="default" id="T3D-zn-YDg"/>
+                            <constraint firstItem="ypT-CT-kL9" firstAttribute="leading" secondItem="Rh6-PL-hmZ" secondAttribute="leading" type="default" id="Xxk-zs-sTH"/>
                             <constraint firstItem="ypT-CT-kL9" firstAttribute="top" secondItem="F5I-MQ-nLl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YGB-XC-XvN"/>
+                            <constraint firstItem="mCq-pJ-5uu" firstAttribute="baseline" secondItem="rnJ-zC-CQU" secondAttribute="baseline" type="default" id="Z1K-yA-TsI"/>
+                            <constraint firstItem="Rh6-PL-hmZ" firstAttribute="top" secondItem="rnJ-zC-CQU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bod-Cb-Up9"/>
                             <constraint firstItem="F5I-MQ-nLl" firstAttribute="top" secondItem="892-wI-cML" secondAttribute="top" constant="12" id="kkm-SY-m1G"/>
-                            <constraint firstItem="jV8-Fw-lIg" firstAttribute="top" secondItem="rnJ-zC-CQU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qzH-VW-j0p"/>
-                            <constraint firstItem="rnJ-zC-CQU" firstAttribute="top" secondItem="892-wI-cML" secondAttribute="top" constant="95" id="rDZ-gU-Jbc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Configuration" id="YOs-gK-GBN"/>
+                    <tabBarItem key="tabBarItem" title="Config" image="20-gear2.png" id="YOs-gK-GBN"/>
+                    <connections>
+                        <outlet property="lblNotifyDays" destination="mCq-pJ-5uu" id="2bq-55-EKi"/>
+                        <outlet property="segNotificationType" destination="ypT-CT-kL9" id="MlO-GI-DiQ"/>
+                        <outlet property="sldNotifyDays" destination="Rh6-PL-hmZ" id="AZ6-27-kPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vio-9n-xwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,7 +193,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
+        <image name="20-gear2.png" width="26" height="28"/>
+        <image name="44-shoebox.png" width="24" height="22"/>
+        <image name="53-house.png" width="22" height="22"/>
     </resources>
     <classes>
         <class className="AddEditBatteryViewController" superclassName="UIViewController">
@@ -199,6 +215,13 @@
         </class>
         <class className="configViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/configViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="notifyDays_Changed:"/>
+                <relationship kind="action" name="segNotificationType_Changed:"/>
+                <relationship kind="outlet" name="lblNotifyDays" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="segNotificationType" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="sldNotifyDays" candidateClass="UISlider"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

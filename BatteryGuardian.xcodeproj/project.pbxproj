@@ -36,6 +36,9 @@
 		D3B5EE8216F5892C0050F057 /* SQLiteAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8116F5892C0050F057 /* SQLiteAdaptor.m */; };
 		D3B5EE8516F589530050F057 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8416F589530050F057 /* MessageCenter.m */; };
 		D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */; };
+		D3C7D8111707F89000D06DB1 /* configInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */; };
+		D3C7D8141707F96300D06DB1 /* ConfigInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D8131707F96300D06DB1 /* ConfigInfo.m */; };
+		D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D8161707F9A400D06DB1 /* configViewController.m */; };
 		FEEA7E541703A8A4001AFE63 /* BatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +92,11 @@
 		D3B5EE8416F589530050F057 /* MessageCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenter.m; sourceTree = "<group>"; };
 		D3B5EE8616F58A2F0050F057 /* AddEditBatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEditBatteryViewController.h; sourceTree = "<group>"; };
 		D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEditBatteryViewController.m; sourceTree = "<group>"; };
+		D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = configInfo.xcdatamodel; sourceTree = "<group>"; };
+		D3C7D8121707F96300D06DB1 /* ConfigInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigInfo.h; sourceTree = "<group>"; };
+		D3C7D8131707F96300D06DB1 /* ConfigInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigInfo.m; sourceTree = "<group>"; };
+		D3C7D8151707F9A400D06DB1 /* configViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configViewController.h; sourceTree = "<group>"; };
+		D3C7D8161707F9A400D06DB1 /* configViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configViewController.m; sourceTree = "<group>"; };
 		FEEA7E521703A8A4001AFE63 /* BatteryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfo.h; sourceTree = "<group>"; };
 		FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +167,8 @@
 				D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */,
 				D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */,
 				D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */,
+				D3C7D8151707F9A400D06DB1 /* configViewController.h */,
+				D3C7D8161707F9A400D06DB1 /* configViewController.m */,
 				D3B5EE8016F5892C0050F057 /* SQLiteAdaptor.h */,
 				D3B5EE8116F5892C0050F057 /* SQLiteAdaptor.m */,
 				D3B5EE8316F589530050F057 /* MessageCenter.h */,
@@ -178,6 +188,9 @@
 				2AC1C6F716F91D4900D58A53 /* BatteryGuardian.xcdatamodeld */,
 				FEEA7E521703A8A4001AFE63 /* BatteryInfo.h */,
 				FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */,
+				D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */,
+				D3C7D8121707F96300D06DB1 /* ConfigInfo.h */,
+				D3C7D8131707F96300D06DB1 /* ConfigInfo.m */,
 			);
 			path = BatteryGuardian;
 			sourceTree = "<group>";
@@ -339,6 +352,9 @@
 				D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */,
 				2AC1C6F916F91D4900D58A53 /* BatteryGuardian.xcdatamodeld in Sources */,
 				FEEA7E541703A8A4001AFE63 /* BatteryInfo.m in Sources */,
+				D3C7D8111707F89000D06DB1 /* configInfo.xcdatamodeld in Sources */,
+				D3C7D8141707F96300D06DB1 /* ConfigInfo.m in Sources */,
+				D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +566,17 @@
 			);
 			currentVersion = 2AC1C6F816F91D4900D58A53 /* BatteryGuardian.xcdatamodel */;
 			path = BatteryGuardian.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */,
+			);
+			currentVersion = D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */;
+			name = configInfo.xcdatamodeld;
+			path = ../configInfo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

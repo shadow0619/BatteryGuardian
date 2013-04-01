@@ -2,7 +2,7 @@
 //  ConfigInfo.m
 //  BatteryGuardian
 //
-//  Created by Brian Picard on 3/31/13.
+//  Created by Brian Picard on 4/1/13.
 //
 //
 
@@ -11,7 +11,7 @@
 
 @implementation ConfigInfo
 
-@dynamic notificationType;
 @dynamic noDaysToNotify;
+@dynamic notificationType;
 
 @end

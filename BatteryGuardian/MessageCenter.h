@@ -10,8 +10,7 @@
 
 @interface MessageCenter : NSObject
 
--(void) notifyBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn;
+-(void) batteryCharge:(NSString*)batteryName;
 
--(void) calendarBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn;
 
 @end

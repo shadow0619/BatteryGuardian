@@ -39,8 +39,8 @@
 		D3BBC7361708125100E6E4A2 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7341708125100E6E4A2 /* 20-gear2.png */; };
 		D3BBC7371708125100E6E4A2 /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7351708125100E6E4A2 /* 53-house.png */; };
 		D3BBC7391708131800E6E4A2 /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7381708131800E6E4A2 /* 44-shoebox.png */; };
-		D3C7D8111707F89000D06DB1 /* configInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */; };
-		D3C7D8141707F96300D06DB1 /* ConfigInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D8131707F96300D06DB1 /* ConfigInfo.m */; };
+		D3BBC73C1708771000E6E4A2 /* configManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BBC73B1708771000E6E4A2 /* configManager.m */; };
+		D3BBC74317095A4000E6E4A2 /* ConfigInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BBC74217095A4000E6E4A2 /* ConfigInfo.m */; };
 		D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D8161707F9A400D06DB1 /* configViewController.m */; };
 		D3C7D82617080DEF00D06DB1 /* guardian.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C7D82517080DEF00D06DB1 /* guardian.png */; };
 		FEEA7E541703A8A4001AFE63 /* BatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */; };
@@ -99,9 +99,10 @@
 		D3BBC7341708125100E6E4A2 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		D3BBC7351708125100E6E4A2 /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		D3BBC7381708131800E6E4A2 /* 44-shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44-shoebox.png"; sourceTree = "<group>"; };
-		D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = configInfo.xcdatamodel; sourceTree = "<group>"; };
-		D3C7D8121707F96300D06DB1 /* ConfigInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigInfo.h; sourceTree = "<group>"; };
-		D3C7D8131707F96300D06DB1 /* ConfigInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigInfo.m; sourceTree = "<group>"; };
+		D3BBC73A1708771000E6E4A2 /* configManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configManager.h; sourceTree = "<group>"; };
+		D3BBC73B1708771000E6E4A2 /* configManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configManager.m; sourceTree = "<group>"; };
+		D3BBC74117095A4000E6E4A2 /* ConfigInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigInfo.h; sourceTree = "<group>"; };
+		D3BBC74217095A4000E6E4A2 /* ConfigInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigInfo.m; sourceTree = "<group>"; };
 		D3C7D8151707F9A400D06DB1 /* configViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configViewController.h; sourceTree = "<group>"; };
 		D3C7D8161707F9A400D06DB1 /* configViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configViewController.m; sourceTree = "<group>"; };
 		D3C7D82517080DEF00D06DB1 /* guardian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guardian.png; path = ../guardian.png; sourceTree = "<group>"; };
@@ -191,11 +192,12 @@
 				D3A7FBAA16F5817C006BA947 /* MainStoryboard_iPad.storyboard */,
 				D3A7FB9616F5817C006BA947 /* Supporting Files */,
 				2AC1C6F716F91D4900D58A53 /* BatteryGuardian.xcdatamodeld */,
+				D3BBC74117095A4000E6E4A2 /* ConfigInfo.h */,
+				D3BBC74217095A4000E6E4A2 /* ConfigInfo.m */,
 				FEEA7E521703A8A4001AFE63 /* BatteryInfo.h */,
 				FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */,
-				D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */,
-				D3C7D8121707F96300D06DB1 /* ConfigInfo.h */,
-				D3C7D8131707F96300D06DB1 /* ConfigInfo.m */,
+				D3BBC73A1708771000E6E4A2 /* configManager.h */,
+				D3BBC73B1708771000E6E4A2 /* configManager.m */,
 			);
 			path = BatteryGuardian;
 			sourceTree = "<group>";
@@ -376,9 +378,9 @@
 				D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */,
 				2AC1C6F916F91D4900D58A53 /* BatteryGuardian.xcdatamodeld in Sources */,
 				FEEA7E541703A8A4001AFE63 /* BatteryInfo.m in Sources */,
-				D3C7D8111707F89000D06DB1 /* configInfo.xcdatamodeld in Sources */,
-				D3C7D8141707F96300D06DB1 /* ConfigInfo.m in Sources */,
 				D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */,
+				D3BBC73C1708771000E6E4A2 /* configManager.m in Sources */,
+				D3BBC74317095A4000E6E4A2 /* ConfigInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,17 +592,6 @@
 			);
 			currentVersion = 2AC1C6F816F91D4900D58A53 /* BatteryGuardian.xcdatamodel */;
 			path = BatteryGuardian.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		D3C7D80F1707F89000D06DB1 /* configInfo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */,
-			);
-			currentVersion = D3C7D8101707F89000D06DB1 /* configInfo.xcdatamodel */;
-			name = configInfo.xcdatamodeld;
-			path = ../configInfo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -8,10 +8,12 @@
 
 #import "MessageCenter.h"
 #import <EventKit/EventKit.h>
+#import "configManager.h"
+#import "ConfigInfo.h"
 
 @implementation MessageCenter
 
--(void) notifyBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
++(void) notifyBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
 {
     //Iterate through all local notifications and remove the existing one for this battery if it exists
     UIApplication *app = [UIApplication sharedApplication];
@@ -37,7 +39,8 @@
     [app scheduleLocalNotification:localNot];
 }
 
--(void) calendarBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
+
++(void) calendarBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
 {
     //Iterate through all local calendar entries and remove the existing one for this battery if it exists
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -72,5 +75,30 @@
     [event setCalendar:[eventStore defaultCalendarForNewEvents]];
     NSError *err;
     bool didWork = [eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+
+}
+
+-(void) batteryCharge:(NSString *)batteryName
+{
+    //retreive config
+    configManager *mgr = [[configManager alloc] init];
+    ConfigInfo *ci = mgr.config;
+    
+    //Make the notify date
+    NSDateComponents *dateComp = [[NSDateComponents alloc]init];
+    dateComp.day = ci.noDaysToNotify;
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *notDate = [cal dateByAddingComponents:dateComp toDate:[NSDate date] options:0];
+    
+    //Determine which option is selected on how to be notified
+    if([ci.notificationType isEqual: @"calendar"])
+    {
+        [[self class] calendarBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
+    }
+    if([ci.notificationType isEqual: @"notification"])
+    {
+        [[self class] notifyBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
+    }
+    
 }
 @end

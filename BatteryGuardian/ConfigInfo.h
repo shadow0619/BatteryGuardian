@@ -2,7 +2,7 @@
 //  ConfigInfo.h
 //  BatteryGuardian
 //
-//  Created by Brian Picard on 3/31/13.
+//  Created by Brian Picard on 4/1/13.
 //
 //
 
@@ -12,7 +12,7 @@
 
 @interface ConfigInfo : NSManagedObject
 
-@property (nonatomic, retain) NSString * notificationType;
 @property (nonatomic, retain) NSNumber * noDaysToNotify;
+@property (nonatomic, retain) NSString * notificationType;
 
 @end

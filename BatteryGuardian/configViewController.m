@@ -7,6 +7,7 @@
 //
 
 #import "configViewController.h"
+#import "configManager.h"
 
 @interface configViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segNotificationType;
@@ -29,7 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    //Read the current config and set the values
+    configManager *mgr = [[configManager alloc] init];
+    ConfigInfo *ci = mgr.config;
+    [self.sldNotifyDays setValue:[ci.noDaysToNotify floatValue]];
+    [self.lblNotifyDays setText:[NSString stringWithFormat:@"%@",ci.noDaysToNotify]];
+     if([ci.notificationType isEqualToString:@"calendar"])
+     {
+         [self.segNotificationType setSelectedSegmentIndex:1];
+     }
+     if([ci.notificationType isEqualToString:@"notification"])
+     {
+         [self.segNotificationType setSelectedSegmentIndex:0];
+     }
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,11 +54,25 @@
 - (IBAction)notifyDays_Changed:(id)sender
 {
     [self.lblNotifyDays setText: [NSString stringWithFormat:@"%.0f", self.sldNotifyDays.value]];
-    //implement an update to the config
+    
+    //Build a config to update
+    configManager *mgr = [[configManager alloc]init];
+    mgr.config.noDaysToNotify = [NSNumber numberWithInt:(int)self.sldNotifyDays.value];
+    
+    //Create a config manager and push the new config to update.
+    [mgr configUpdate];
 }
 - (IBAction)segNotificationType_Changed:(id)sender
 {
-    //implement an update to the config
+    configManager *mgr = [[configManager alloc]init];
+    
+    if(self.segNotificationType.selectedSegmentIndex == 0)
+        mgr.config.notificationType = @"notification";
+    if(self.segNotificationType.selectedSegmentIndex == 1)
+        mgr.config.notificationType = @"calendar";
+    
+    //Create a config manager and push the new config to update.
+    [mgr configUpdate];
 }
 
 @end

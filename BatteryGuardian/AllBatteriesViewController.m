@@ -9,8 +9,7 @@
 #import "AllBatteriesViewController.h"
 #import "BatteryGuardianAppDelegate.h"
 #import "BatteryInfo.h"
-
-#import "AddEditBatteryViewController.h"    //Is this the right place to put this?
+#import "AddEditBatteryViewController.h"
 
 @interface AllBatteriesViewController ()
 
@@ -53,7 +52,7 @@
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
-    addButton.enabled = NO;
+    addButton.enabled = YES;
     self.navigationItem.rightBarButtonItem = self.addButton;
     
     batteryInfos = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -97,10 +96,11 @@
      */
     //if ([[segue identifier] isEqualToString:@"ShowSelectedPlay"]) {
         
-        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        AddEditBatteryViewController *detailViewController = [segue destinationViewController];
-        //detailViewController.play = [batteryInfos objectInListAtIndex:selectedRowIndex.row];
-    //}
+    NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+    AddEditBatteryViewController *detailViewController = [segue destinationViewController];
+    BatteryInfo *bi = [batteryInfos objectAtIndex:selectedRowIndex.row];
+    detailViewController.batteryName = bi.name;
+
 }
 
 /*

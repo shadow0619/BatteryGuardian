@@ -10,7 +10,7 @@
         <attribute name="notificationType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BatteryInfo" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="BatteryInfo" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="ConfigInfo" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

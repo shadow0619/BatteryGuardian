@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface AddEditBatteryViewController : UIViewController
+@property (weak, nonatomic) NSString *batteryName;
 
 @end

@@ -126,7 +126,7 @@ static BatteryGuardianAppDelegate *sharedInstance;
 {
     // Override point for customization after application launch.
     
-/*Test Code */
+/*Test Code 
     NSManagedObjectContext *context = [self managedObjectContext];
     BatteryInfo *batteryInfo = [NSEntityDescription
                                        insertNewObjectForEntityForName:@"BatteryInfo"
@@ -152,7 +152,7 @@ static BatteryGuardianAppDelegate *sharedInstance;
         
         NSLog(@"Date Last Charged: %@", info.lastChargedDate);
     }
-/*END Test Code*/
+END Test Code*/
     
     
     /*Code Point that I'm having problem with.  Need to pass the context to the AllBatteries View Controller*/

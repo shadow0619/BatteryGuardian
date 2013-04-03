@@ -12,14 +12,7 @@
 
 @interface BatteryGuardianAppDelegate : UIResponder <UIApplicationDelegate>
 
-//+(BatteryGuardianAppDelegate *) sharedAppDelegate;
-
 @property (strong, nonatomic) UIWindow *window;
-//@property (nonatomic, retain) IBOutlet AllBatteriesViewController *batteriesViewController;
-
-//@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-//@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-//- (NSURL *)applicationDocumentsDirectory;
 
 @end

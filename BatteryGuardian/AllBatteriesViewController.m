@@ -19,9 +19,7 @@
 
 @synthesize managedObjectContext;
 @synthesize batteryInfos;
-
 @synthesize tableViewController;
-
 @synthesize addButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,8 +35,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    //BatteryGuardianAppDelegate *ad = [BatteryGuardianAppDelegate sharedAppDelegate];
     
     managedObjectContext = [[BatteryGuardianContext alloc] init].managedObjectContext;
     

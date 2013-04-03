@@ -137,22 +137,44 @@
 //	BatteryGuardianContext *myContext = [[BatteryGuardianContext alloc] init];
 //    self.managedObjectContext = myContext.managedObjectContext;
 	
-/*Test Code 
-    NSManagedObjectContext *context = [self managedObjectContext];
-    BatteryInfo *batteryInfo = [NSEntityDescription
-                                       insertNewObjectForEntityForName:@"BatteryInfo"
-                                       inManagedObjectContext:context];
-    batteryInfo.batteryDescription =  @"SPC 2200mAh";
-    batteryInfo.name = @"1-1";
-    batteryInfo.lastChargedDate = [NSDate date];
-    
+/*Test Code */
+
+    NSManagedObjectContext *context = [[BatteryGuardianContext alloc] init].managedObjectContext;
     NSError *error;
+	
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"BatteryInfo" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if( [fetchedObjects count] == 0 )
+	{
+	
+		BatteryInfo *batteryInfo1 = [NSEntityDescription insertNewObjectForEntityForName:@"BatteryInfo"inManagedObjectContext:context];
+		batteryInfo1.batteryDescription =  @"SPC 2200mAh";
+		batteryInfo1.name = @"1-1";
+		batteryInfo1.lastChargedDate = [NSDate date];
+
+		BatteryInfo *batteryInfo2 = [NSEntityDescription
+								 insertNewObjectForEntityForName:@"BatteryInfo"
+								 inManagedObjectContext:context];
+		batteryInfo2.batteryDescription =  @"Orion 3300mAh";
+		batteryInfo2.name = @"2-2";
+		batteryInfo2.lastChargedDate = [NSDate date];
+	}
+	
+    
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 
-    
-    
+    for (BatteryInfo *info in fetchedObjects) {
+        NSLog(@"Description: %@", info.batteryDescription);
+        
+        NSLog(@"Date Last Charged: %@", info.lastChargedDate);
+	}
+/*
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"BatteryInfo" inManagedObjectContext:context];
@@ -163,7 +185,8 @@
         
         NSLog(@"Date Last Charged: %@", info.lastChargedDate);
     }
-END Test Code*/
+ */
+/*END Test Code*/
     
     
     /*Code Point that I'm having problem with.  Need to pass the context to the AllBatteries View Controller*/

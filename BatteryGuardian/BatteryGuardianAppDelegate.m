@@ -10,18 +10,18 @@
 #import "AllBatteriesViewController.h"
 #import "BatteryInfo.h"
 
-static BatteryGuardianAppDelegate *sharedInstance;
+//static BatteryGuardianAppDelegate *sharedInstance;
 
 @implementation BatteryGuardianAppDelegate
 
 @synthesize window = _window;
 
-@synthesize managedObjectContext = __managedObjectContext;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize managedObjectContext; // = __managedObjectContext;
+//@synthesize managedObjectModel = __managedObjectModel;
+//@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
-@synthesize batteriesViewController;
-
+//@synthesize batteriesViewController;
+/*
 -(id)init
 {
     if(sharedInstance)
@@ -33,17 +33,21 @@ static BatteryGuardianAppDelegate *sharedInstance;
     sharedInstance = self;
     return self;
 }
-
+*/
+/*
 +(BatteryGuardianAppDelegate *) sharedAppDelegate
 {
     return sharedInstance;
 }
+*/
 
 #pragma - Core Data
 
 /*****************************
  Core Data Code
  *****************************/
+
+/*
 - (NSManagedObjectContext *)managedObjectContext
 {
     if (__managedObjectContext != nil) {
@@ -57,7 +61,9 @@ static BatteryGuardianAppDelegate *sharedInstance;
     }
     return __managedObjectContext;
 }
+*/
 
+/*
 - (NSManagedObjectModel *)managedObjectModel
 {
     if (__managedObjectModel != nil) {
@@ -67,7 +73,9 @@ static BatteryGuardianAppDelegate *sharedInstance;
     __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return __managedObjectModel;
 }
+*/
 
+/*
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
     if (__persistentStoreCoordinator != nil) {
@@ -79,7 +87,7 @@ static BatteryGuardianAppDelegate *sharedInstance;
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
+        / *
          Replace this implementation with code to handle the error appropriately.
          
          abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -101,22 +109,22 @@ static BatteryGuardianAppDelegate *sharedInstance;
          
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
-         */
+         * /
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
     return __persistentStoreCoordinator;
 }
-
+*/
 #pragma mark - Application's Documents directory
-
+/*
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
+*/
 
 /*****************************
  END Core Data Code
@@ -125,7 +133,10 @@ static BatteryGuardianAppDelegate *sharedInstance;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+/* Test to see if this is needed. */
+//	BatteryGuardianContext *myContext = [[BatteryGuardianContext alloc] init];
+//    self.managedObjectContext = myContext.managedObjectContext;
+	
 /*Test Code 
     NSManagedObjectContext *context = [self managedObjectContext];
     BatteryInfo *batteryInfo = [NSEntityDescription
@@ -163,7 +174,9 @@ END Test Code*/
 //   AllBatteriesViewController *controller = (AllBatteriesViewController *)navigationController.topViewController;
 //   controller.managedObjectContext = self.managedObjectContext;
     
-    batteriesViewController.managedObjectContext = self.managedObjectContext;
+	
+	
+    //batteriesViewController.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }

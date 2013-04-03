@@ -44,6 +44,7 @@
 		D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D8161707F9A400D06DB1 /* configViewController.m */; };
 		D3C7D82617080DEF00D06DB1 /* guardian.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C7D82517080DEF00D06DB1 /* guardian.png */; };
 		FEEA7E541703A8A4001AFE63 /* BatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */; };
+		FEF78AC8170BBD79004C980A /* BatteryGuardianContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF78AC7170BBD79004C980A /* BatteryGuardianContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		D3C7D82517080DEF00D06DB1 /* guardian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guardian.png; path = ../guardian.png; sourceTree = "<group>"; };
 		FEEA7E521703A8A4001AFE63 /* BatteryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfo.h; sourceTree = "<group>"; };
 		FEEA7E531703A8A4001AFE63 /* BatteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfo.m; sourceTree = "<group>"; };
+		FEF78AC6170BBD79004C980A /* BatteryGuardianContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryGuardianContext.h; sourceTree = "<group>"; };
+		FEF78AC7170BBD79004C980A /* BatteryGuardianContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryGuardianContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 		D3A7FB9516F5817C006BA947 /* BatteryGuardian */ = {
 			isa = PBXGroup;
 			children = (
+				FEF78AC6170BBD79004C980A /* BatteryGuardianContext.h */,
+				FEF78AC7170BBD79004C980A /* BatteryGuardianContext.m */,
 				D3C7D818170804CB00D06DB1 /* Images */,
 				D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */,
 				D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */,
@@ -381,6 +386,7 @@
 				D3C7D8171707F9A400D06DB1 /* configViewController.m in Sources */,
 				D3BBC73C1708771000E6E4A2 /* configManager.m in Sources */,
 				D3BBC74317095A4000E6E4A2 /* ConfigInfo.m in Sources */,
+				FEF78AC8170BBD79004C980A /* BatteryGuardianContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

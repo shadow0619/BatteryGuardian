@@ -38,14 +38,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    BatteryGuardianAppDelegate *ad = [BatteryGuardianAppDelegate sharedAppDelegate];
+    //BatteryGuardianAppDelegate *ad = [BatteryGuardianAppDelegate sharedAppDelegate];
     
-    managedObjectContext = ad.managedObjectContext;
+    managedObjectContext = [[BatteryGuardianContext alloc] init].managedObjectContext;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BatteryInfo" inManagedObjectContext:managedObjectContext];
-    
-
     
     [fetchRequest setEntity: entity];
     NSError *error;

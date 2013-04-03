@@ -42,8 +42,8 @@
     self.lblBatteryName.text = self.batteryName;
     
     //create a fetch request for the batteryinfo for the selected item
-    BatteryGuardianAppDelegate *del = [BatteryGuardianAppDelegate sharedAppDelegate];
-    NSManagedObjectContext *context = del.managedObjectContext;
+//    BatteryGuardianAppDelegate *del = [BatteryGuardianAppDelegate sharedAppDelegate];
+    NSManagedObjectContext *context = [[BatteryGuardianContext alloc] init].managedObjectContext;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BatteryInfo" inManagedObjectContext:context];

@@ -8,17 +8,18 @@
 @class AllBatteriesViewController;
 
 #import <UIKit/UIKit.h>
+#import "BatteryGuardianContext.h"
 
 @interface BatteryGuardianAppDelegate : UIResponder <UIApplicationDelegate>
 
-+(BatteryGuardianAppDelegate *) sharedAppDelegate;
+//+(BatteryGuardianAppDelegate *) sharedAppDelegate;
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) IBOutlet AllBatteriesViewController *batteriesViewController;
+//@property (nonatomic, retain) IBOutlet AllBatteriesViewController *batteriesViewController;
 
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-- (NSURL *)applicationDocumentsDirectory;
+//@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+//@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+//- (NSURL *)applicationDocumentsDirectory;
 
 @end

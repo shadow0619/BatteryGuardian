@@ -71,8 +71,7 @@ static configManager *sharedInstance;
 -(void) configUpdate
 {
     //Get the delegate to get the managedObjectContext
-    BatteryGuardianAppDelegate *del = [[BatteryGuardianAppDelegate alloc] init];
-    NSManagedObjectContext *context = del.managedObjectContext;
+    NSManagedObjectContext *context = [[BatteryGuardianContext alloc] init].managedObjectContext;
     NSError *err;
     
     //Fetch the config, if there are no entries then add one.

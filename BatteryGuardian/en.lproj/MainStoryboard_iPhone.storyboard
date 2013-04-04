@@ -158,11 +158,11 @@
         <scene sceneID="K9H-dX-ze0">
             <objects>
                 <viewController id="64o-b1-FNW" customClass="AddEditBatteryViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NwX-4C-yjA">
+                    <view key="view" contentMode="scaleToFill" id="NwX-4C-yjA" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-dF-Wny">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-dF-Wny">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOT-2g-XLg">
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -192,20 +192,24 @@
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-Rj-2BE">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="64o-b1-FNW" id="CmQ-RK-kiA"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1D3-eJ-851">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="SUA-Xx-0gF"/>
-                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="removeKeyboard:" destination="64o-b1-FNW" eventType="editingDidEndOnExit" id="2rV-pR-aEO"/>
+                                            <outlet property="delegate" destination="64o-b1-FNW" id="xgC-is-cNQ"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Battery Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-Ab-ixI">
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="06H-Xz-VAB"/>
                                             <constraint firstAttribute="height" constant="21" id="99m-o9-dVD"/>
-                                            <constraint firstAttribute="width" constant="162" id="fca-xj-gUZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -213,32 +217,36 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="197" id="0Ja-PC-yxX"/>
                                     <constraint firstItem="o8Q-Rj-2BE" firstAttribute="leading" secondItem="1n8-Se-mhE" secondAttribute="leading" type="default" id="2wN-Fj-ObX"/>
                                     <constraint firstItem="Z5h-Ab-ixI" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="173" id="6np-Vg-lug"/>
                                     <constraint firstAttribute="trailing" secondItem="JOT-2g-XLg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7GU-h1-9sK"/>
-                                    <constraint firstAttribute="bottom" secondItem="1D3-eJ-851" secondAttribute="bottom" constant="83" id="C6g-dy-Aiw"/>
                                     <constraint firstItem="1n8-Se-mhE" firstAttribute="trailing" secondItem="o8Q-Rj-2BE" secondAttribute="trailing" type="default" id="Cnt-dc-pjU"/>
                                     <constraint firstItem="qqM-cH-6b0" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="65" id="DTA-fA-fwz"/>
+                                    <constraint firstItem="Z5h-Ab-ixI" firstAttribute="centerX" secondItem="o8Q-Rj-2BE" secondAttribute="centerX" type="default" id="Mr1-8l-df5"/>
                                     <constraint firstItem="1n8-Se-mhE" firstAttribute="top" secondItem="qqM-cH-6b0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Nbs-ck-pIb"/>
-                                    <constraint firstItem="1D3-eJ-851" firstAttribute="centerX" secondItem="ZjN-dF-Wny" secondAttribute="centerX" type="default" id="OO4-ep-kA0"/>
+                                    <constraint firstAttribute="bottom" secondItem="1D3-eJ-851" secondAttribute="bottom" constant="239" id="Qy2-JJ-yYL"/>
                                     <constraint firstItem="o8Q-Rj-2BE" firstAttribute="top" secondItem="1n8-Se-mhE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="T0x-Qk-O5y"/>
-                                    <constraint firstItem="1D3-eJ-851" firstAttribute="centerX" secondItem="Z5h-Ab-ixI" secondAttribute="centerX" type="default" id="UOP-bL-bhG"/>
                                     <constraint firstItem="qqM-cH-6b0" firstAttribute="centerX" secondItem="1n8-Se-mhE" secondAttribute="centerX" type="default" id="USM-5S-GWb"/>
-                                    <constraint firstItem="1D3-eJ-851" firstAttribute="top" secondItem="Z5h-Ab-ixI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UX1-lF-vMB"/>
-                                    <constraint firstItem="o8Q-Rj-2BE" firstAttribute="centerX" secondItem="Z5h-Ab-ixI" secondAttribute="centerX" type="default" id="aBb-ge-R0s"/>
                                     <constraint firstItem="JOT-2g-XLg" firstAttribute="centerX" secondItem="qqM-cH-6b0" secondAttribute="centerX" type="default" id="agY-gV-uhd"/>
                                     <constraint firstItem="JOT-2g-XLg" firstAttribute="leading" secondItem="ZjN-dF-Wny" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eU7-bW-9pA"/>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="trailing" secondItem="Z5h-Ab-ixI" secondAttribute="trailing" type="default" id="ntt-Bh-Dnu"/>
                                     <constraint firstItem="JOT-2g-XLg" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="20" symbolic="YES" type="default" id="vsc-dF-JnV"/>
+                                    <constraint firstItem="1n8-Se-mhE" firstAttribute="centerX" secondItem="ZjN-dF-Wny" secondAttribute="centerX" type="default" id="wLo-3r-uAl"/>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="leading" secondItem="Z5h-Ab-ixI" secondAttribute="leading" type="default" id="yOK-Pu-bqO"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="-10" id="ihR-cp-0Ni"/>
+                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="-11" id="fYd-79-e7f"/>
                             <constraint firstItem="ZjN-dF-Wny" firstAttribute="leading" secondItem="NwX-4C-yjA" secondAttribute="leading" constant="-4" id="lKq-kP-1Xs"/>
                             <constraint firstItem="ZjN-dF-Wny" firstAttribute="centerX" secondItem="NwX-4C-yjA" secondAttribute="centerX" type="default" id="nfY-dd-xcI"/>
-                            <constraint firstAttribute="bottom" secondItem="ZjN-dF-Wny" secondAttribute="bottom" constant="150" id="xyh-10-KWu"/>
+                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="bottom" secondItem="NwX-4C-yjA" secondAttribute="bottom" type="default" id="p5E-8Y-grN"/>
                         </constraints>
+                        <connections>
+                            <action selector="tapBackground:" destination="64o-b1-FNW" eventType="touchDown" id="19G-Bx-p88"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="tqr-BD-C90">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="5L5-2f-TSh">
@@ -284,6 +292,39 @@
         <image name="44-shoebox.png" width="24" height="22"/>
         <image name="53-house.png" width="22" height="22"/>
     </resources>
+    <classes>
+        <class className="AddEditBatteryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEditBatteryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cmdCharged_clicked:"/>
+                <relationship kind="action" name="cmdSave_Clicked:"/>
+                <relationship kind="action" name="removeKeyboard:"/>
+                <relationship kind="action" name="tapBackground:"/>
+            </relationships>
+        </class>
+        <class className="AllBatteriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllBatteriesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableViewController" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="configViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/configViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="notifyDays_Changed:"/>
+                <relationship kind="action" name="segNotificationType_Changed:"/>
+                <relationship kind="outlet" name="lblNotifyDays" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="segNotificationType" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="sldNotifyDays" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

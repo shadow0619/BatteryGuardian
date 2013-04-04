@@ -14,10 +14,11 @@
 
 @interface AddEditBatteryViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *txtBatteryName;
-@property (weak, nonatomic) IBOutlet UITextField *txtBatteryDesc;
-@property (weak, nonatomic) IBOutlet UILabel *lblLastTimeCharged;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UITextField *txtBatteryName;
+@property (weak, nonatomic) UITextField *txtBatteryDesc;
+@property (weak, nonatomic) UILabel *lblLastTimeCharged;
+@property (weak, nonatomic) UIScrollView *scrollView;
+@property (weak, nonatomic) UITextField *activeField;
 
 
 @end
@@ -62,6 +63,15 @@
     [self registerForKeyboardNotifications];
 }
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    if(self.txtBatteryDesc == textField)
+        [self.txtBatteryDesc resignFirstResponder];
+    if(self.txtBatteryName == textField)
+        [self.txtBatteryDesc becomeFirstResponder];
+    return YES;
+}
+
 - (IBAction)cmdSave_Clicked:(id)sender 
 {
     //Get the context to perform either an update or a add
@@ -86,9 +96,6 @@
     {
         
     }
-    
-    //AllBatteriesViewController *root = [self.navigationController.viewControllers objectAtIndex:1];
-    //[root updateTable];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -131,8 +138,8 @@
     // Your application might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.txtBatteryDesc.frame.origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.txtBatteryDesc.frame.origin.y-kbSize.height);
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height);
         [self.scrollView setContentOffset:scrollPoint animated:YES];
     }
 }
@@ -143,6 +150,16 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeField = nil;
 }
 
 @end

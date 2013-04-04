@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AddEditBatteryViewController : UIViewController
+@interface AddEditBatteryViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) NSString *batteryName;
 @property (nonatomic) BOOL isAdd;
 

@@ -10,5 +10,6 @@
 
 @interface AddEditBatteryViewController : UIViewController
 @property (weak, nonatomic) NSString *batteryName;
+@property (nonatomic) BOOL isAdd;
 
 @end

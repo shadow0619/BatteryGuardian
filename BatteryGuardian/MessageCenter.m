@@ -74,7 +74,7 @@
     //Set the calendar and submit the event
     [event setCalendar:[eventStore defaultCalendarForNewEvents]];
     NSError *err;
-    bool didWork = [eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+    [eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
 
 }
 
@@ -86,7 +86,7 @@
     
     //Make the notify date
     NSDateComponents *dateComp = [[NSDateComponents alloc]init];
-    dateComp.day = ci.noDaysToNotify;
+    dateComp.day = [ci.noDaysToNotify intValue];
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDate *notDate = [cal dateByAddingComponents:dateComp toDate:[NSDate date] options:0];
     

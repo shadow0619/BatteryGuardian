@@ -12,7 +12,10 @@
 #import "AddEditBatteryViewController.h"
 
 @interface AllBatteriesViewController ()
-
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSArray *batteryInfos;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewController;
+@property (nonatomic, retain) UIBarButtonItem *addButton;
 @end
 
 @implementation AllBatteriesViewController
@@ -34,7 +37,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self updateTable];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self updateTable];
+    [self.tableViewController reloadData];
+}
+
+-(void) updateTable
+{
+    // Do any additional setup after loading the view.
     
     managedObjectContext = [[BatteryGuardianContext alloc] init].managedObjectContext;
     
@@ -44,13 +58,20 @@
     [fetchRequest setEntity: entity];
     NSError *error;
     
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
-    addButton.enabled = YES;
-    self.navigationItem.rightBarButtonItem = self.addButton;
-    
     batteryInfos = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView beginUpdates];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Do whatever data deletion you need to do...
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+    [tableView endUpdates];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -88,29 +109,28 @@
      When a row is selected, the segue creates the detail view controller as the destination.
      Set the detail view controller's detail item to the item associated with the selected row.
      */
-    //if ([[segue identifier] isEqualToString:@"ShowSelectedPlay"]) {
+    if ([[segue identifier] isEqualToString:@"edit"])
+    {
         
     NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
     AddEditBatteryViewController *detailViewController = [segue destinationViewController];
     BatteryInfo *bi = [batteryInfos objectAtIndex:selectedRowIndex.row];
     detailViewController.batteryName = bi.name;
-
+    }else if ([[segue identifier] isEqualToString:@"add"])
+    {
+        AddEditBatteryViewController *detailViewController = [segue destinationViewController];
+        detailViewController.isAdd = YES;
+    }
 }
 
-/*
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    /*
-     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-     BATTrailsViewController *trailsController = [[BATTrailsViewController alloc] initWithStyle:UITableViewStylePlain];
-     trailsController.selectedRegion = [regions objectAtIndex:indexPath.row];
-     [[self navigationController] pushViewController:trailsController animated:YES];
-     [trailsController release];
-     *
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    AddEditBatteryViewController* addEditViewController = [[AddEditBatteryViewController alloc] initWithNibName:<#(NSString *)#> bundle:<#(NSBundle *)#>];
+
+-(void) addEvent: sender
+{	
+    AddEditBatteryViewController *addEdit = [[AddEditBatteryViewController alloc]init];
     
-    [[self navigationController] pushViewController:addEditViewController animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:addEdit];
+    
+    [[self navigationController] presentViewController:nav animated:YES completion:nil];
     
 }
-*/
 @end

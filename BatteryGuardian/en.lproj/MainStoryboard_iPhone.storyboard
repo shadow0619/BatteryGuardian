@@ -134,12 +134,22 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="64o-b1-FNW" kind="push" id="QzS-LG-PzB"/>
+                                    <segue destination="64o-b1-FNW" kind="push" identifier="edit" id="QzS-LG-PzB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YMT-Ky-puW"/>
+                    <navigationItem key="navigationItem" id="YMT-Ky-puW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="FyN-ep-0sy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fqF-Xn-xeM">
+                            <connections>
+                                <segue destination="64o-b1-FNW" kind="push" identifier="add" id="EQv-DO-wNq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableViewController" destination="G1I-ht-hOx" id="AlS-fR-hV3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdA-ru-ibd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,77 +163,96 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-Q3-TmC">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Battery Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-Se-mhE">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-dF-Wny">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOT-2g-XLg">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Charged This Battery">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cmdCharged_clicked:" destination="64o-b1-FNW" eventType="touchUpInside" id="4sn-AT-TtS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-cH-6b0">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Battery Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-Se-mhE">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="UjF-Vw-DH0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-Rj-2BE">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1D3-eJ-851">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="SUA-Xx-0gF"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Battery Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-Ab-ixI">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="99m-o9-dVD"/>
+                                            <constraint firstAttribute="width" constant="162" id="fca-xj-gUZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="UjF-Vw-DH0"/>
+                                    <constraint firstItem="o8Q-Rj-2BE" firstAttribute="leading" secondItem="1n8-Se-mhE" secondAttribute="leading" type="default" id="2wN-Fj-ObX"/>
+                                    <constraint firstItem="Z5h-Ab-ixI" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="173" id="6np-Vg-lug"/>
+                                    <constraint firstAttribute="trailing" secondItem="JOT-2g-XLg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7GU-h1-9sK"/>
+                                    <constraint firstAttribute="bottom" secondItem="1D3-eJ-851" secondAttribute="bottom" constant="83" id="C6g-dy-Aiw"/>
+                                    <constraint firstItem="1n8-Se-mhE" firstAttribute="trailing" secondItem="o8Q-Rj-2BE" secondAttribute="trailing" type="default" id="Cnt-dc-pjU"/>
+                                    <constraint firstItem="qqM-cH-6b0" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="65" id="DTA-fA-fwz"/>
+                                    <constraint firstItem="1n8-Se-mhE" firstAttribute="top" secondItem="qqM-cH-6b0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Nbs-ck-pIb"/>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="centerX" secondItem="ZjN-dF-Wny" secondAttribute="centerX" type="default" id="OO4-ep-kA0"/>
+                                    <constraint firstItem="o8Q-Rj-2BE" firstAttribute="top" secondItem="1n8-Se-mhE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="T0x-Qk-O5y"/>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="centerX" secondItem="Z5h-Ab-ixI" secondAttribute="centerX" type="default" id="UOP-bL-bhG"/>
+                                    <constraint firstItem="qqM-cH-6b0" firstAttribute="centerX" secondItem="1n8-Se-mhE" secondAttribute="centerX" type="default" id="USM-5S-GWb"/>
+                                    <constraint firstItem="1D3-eJ-851" firstAttribute="top" secondItem="Z5h-Ab-ixI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UX1-lF-vMB"/>
+                                    <constraint firstItem="o8Q-Rj-2BE" firstAttribute="centerX" secondItem="Z5h-Ab-ixI" secondAttribute="centerX" type="default" id="aBb-ge-R0s"/>
+                                    <constraint firstItem="JOT-2g-XLg" firstAttribute="centerX" secondItem="qqM-cH-6b0" secondAttribute="centerX" type="default" id="agY-gV-uhd"/>
+                                    <constraint firstItem="JOT-2g-XLg" firstAttribute="leading" secondItem="ZjN-dF-Wny" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eU7-bW-9pA"/>
+                                    <constraint firstItem="JOT-2g-XLg" firstAttribute="top" secondItem="ZjN-dF-Wny" secondAttribute="top" constant="20" symbolic="YES" type="default" id="vsc-dF-JnV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Battery Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5h-Ab-ixI">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="99m-o9-dVD"/>
-                                    <constraint firstAttribute="width" constant="162" id="fca-xj-gUZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOT-2g-XLg">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="HFJ-sS-hha"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Charged This Battery">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cmdCharged_clicked:" destination="64o-b1-FNW" eventType="touchUpInside" id="4sn-AT-TtS"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1D3-eJ-851">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-cH-6b0">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ekf-Q3-TmC" firstAttribute="top" secondItem="1n8-Se-mhE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4QE-5K-eQV"/>
-                            <constraint firstItem="qqM-cH-6b0" firstAttribute="leading" secondItem="Ekf-Q3-TmC" secondAttribute="leading" type="default" id="5Tp-H1-rtq"/>
-                            <constraint firstItem="Z5h-Ab-ixI" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="223" id="VSp-R9-5yP"/>
-                            <constraint firstItem="1D3-eJ-851" firstAttribute="top" secondItem="Z5h-Ab-ixI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VcB-8R-pzv"/>
-                            <constraint firstItem="qqM-cH-6b0" firstAttribute="centerX" secondItem="NwX-4C-yjA" secondAttribute="centerX" type="user" id="XSS-En-Aoc"/>
-                            <constraint firstAttribute="trailing" secondItem="1D3-eJ-851" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dbu-uE-FVU"/>
-                            <constraint firstItem="1n8-Se-mhE" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="129" id="gU9-7Y-zYO"/>
-                            <constraint firstItem="Ekf-Q3-TmC" firstAttribute="centerX" secondItem="1n8-Se-mhE" secondAttribute="centerX" type="default" id="jNK-j4-4eR"/>
-                            <constraint firstItem="qqM-cH-6b0" firstAttribute="top" secondItem="JOT-2g-XLg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mJD-By-UWy"/>
-                            <constraint firstItem="JOT-2g-XLg" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="10" id="o3F-jB-6qj"/>
-                            <constraint firstItem="1D3-eJ-851" firstAttribute="leading" secondItem="NwX-4C-yjA" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oNu-AS-8UA"/>
-                            <constraint firstItem="1D3-eJ-851" firstAttribute="centerX" secondItem="Z5h-Ab-ixI" secondAttribute="centerX" type="default" id="om9-2X-zkI"/>
-                            <constraint firstItem="JOT-2g-XLg" firstAttribute="centerX" secondItem="qqM-cH-6b0" secondAttribute="centerX" type="default" id="x8b-ec-pud"/>
+                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="top" secondItem="NwX-4C-yjA" secondAttribute="top" constant="-10" id="ihR-cp-0Ni"/>
+                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="leading" secondItem="NwX-4C-yjA" secondAttribute="leading" constant="-4" id="lKq-kP-1Xs"/>
+                            <constraint firstItem="ZjN-dF-Wny" firstAttribute="centerX" secondItem="NwX-4C-yjA" secondAttribute="centerX" type="default" id="nfY-dd-xcI"/>
+                            <constraint firstAttribute="bottom" secondItem="ZjN-dF-Wny" secondAttribute="bottom" constant="150" id="xyh-10-KWu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tqr-BD-C90"/>
+                    <navigationItem key="navigationItem" id="tqr-BD-C90">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="5L5-2f-TSh">
+                            <connections>
+                                <action selector="cmdSave_Clicked:" destination="64o-b1-FNW" id="wL3-Qy-Ujm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="lblBatteryName" destination="Ekf-Q3-TmC" id="UBS-V5-xoX"/>
                         <outlet property="lblLastTimeCharged" destination="qqM-cH-6b0" id="J3C-cU-EX4"/>
+                        <outlet property="scrollView" destination="ZjN-dF-Wny" id="3Ao-Gv-xsx"/>
                         <outlet property="txtBatteryDesc" destination="1D3-eJ-851" id="iXg-2W-8Dr"/>
+                        <outlet property="txtBatteryName" destination="o8Q-Rj-2BE" id="KUa-uk-9Qx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4B-Hz-YSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,9 +290,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEditBatteryViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cmdCharged_clicked:"/>
-                <relationship kind="outlet" name="lblBatteryName" candidateClass="UILabel"/>
+                <relationship kind="action" name="cmdSave_Clicked:"/>
                 <relationship kind="outlet" name="lblLastTimeCharged" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="txtBatteryDesc" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtBatteryName" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="AllBatteriesViewController" superclassName="UITableViewController">
@@ -294,4 +325,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="QzS-LG-PzB"/>
+    </inferredMetricsTieBreakers>
 </document>

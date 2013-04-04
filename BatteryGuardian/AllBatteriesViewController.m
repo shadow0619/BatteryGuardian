@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     [super viewDidLoad];
     [self updateTable];
 }
@@ -62,13 +63,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView beginUpdates];
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Do whatever data deletion you need to do...
-        // Delete the row from the data source
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSManagedObject *obj = [batteryInfos objectAtIndex:indexPath.row];
+        [self.managedObjectContext deleteObject:obj];
+        NSError *err;
+        if(![self.managedObjectContext save:&err])
+        {
+            NSLog(@"Whoops, couldn't save: %@", [err localizedDescription]);
+        }
+        
+        [self updateTable];
+    
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
     }
-    [tableView endUpdates];
 }
 
 

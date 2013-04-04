@@ -140,7 +140,6 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="YMT-Ky-puW">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="FyN-ep-0sy"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fqF-Xn-xeM">
                             <connections>
                                 <segue destination="64o-b1-FNW" kind="push" identifier="add" id="EQv-DO-wNq"/>
@@ -285,41 +284,6 @@
         <image name="44-shoebox.png" width="24" height="22"/>
         <image name="53-house.png" width="22" height="22"/>
     </resources>
-    <classes>
-        <class className="AddEditBatteryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEditBatteryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cmdCharged_clicked:"/>
-                <relationship kind="action" name="cmdSave_Clicked:"/>
-                <relationship kind="outlet" name="lblLastTimeCharged" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="txtBatteryDesc" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtBatteryName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AllBatteriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllBatteriesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewController" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="configViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/configViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="notifyDays_Changed:"/>
-                <relationship kind="action" name="segNotificationType_Changed:"/>
-                <relationship kind="outlet" name="lblNotifyDays" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="segNotificationType" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sldNotifyDays" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

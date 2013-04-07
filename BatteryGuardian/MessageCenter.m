@@ -10,23 +10,40 @@
 #import <EventKit/EventKit.h>
 #import "configManager.h"
 #import "ConfigInfo.h"
+@interface MessageCenter()
+
+-(void) removeNotification:(NSString*)batteryName app:(UIApplication*)app;
+-(void) removeCalendar:(NSString *)batteryName eventStore:(EKEventStore*)eventStore calendarEntries:(NSArray*)calendarEntries;
+
+@end
 
 @implementation MessageCenter
+
+-(void) batteryCharge:(NSString *)batteryName
+{
+    //Make the notify date
+    NSDateComponents *dateComp = [[NSDateComponents alloc]init];
+    dateComp.day = [[NSUserDefaults standardUserDefaults] integerForKey:@"mltNumDays"];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *notDate = [cal dateByAddingComponents:dateComp toDate:[NSDate date] options:0];
+    
+    //Determine which option is selected on how to be notified
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:(@"mltAlertTypes")] isEqual: @"calendar"])
+    {
+        [[self class] calendarBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
+    }
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:(@"mltAlertTypes")]  isEqual: @"notification"])
+    {
+        [[self class] notifyBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
+    }
+    
+}
 
 +(void) notifyBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
 {
     //Iterate through all local notifications and remove the existing one for this battery if it exists
     UIApplication *app = [UIApplication sharedApplication];
-    NSArray *notifications = [app scheduledLocalNotifications];
-
-    for(UILocalNotification *localNot in notifications)
-    {
-        if([localNot.alertBody hasPrefix:(batteryName)])
-        {
-            [app cancelLocalNotification:(localNot)];
-        }
-    }
-    
+    [[self class] removeNotification:batteryName app:app];
     
     //Build the local notification
     UILocalNotification *localNot = [[UILocalNotification alloc] init];
@@ -39,9 +56,12 @@
     [app scheduleLocalNotification:localNot];
 }
 
-
 +(void) calendarBatteryCharge:(NSString*)batteryName whenToNotify:(NSDate*) notifyOn
 {
+    //Iterate through and remove any notifications for this battery in case the user changes the notification setting
+    UIApplication *app = [UIApplication sharedApplication];
+    [[self class] removeNotification:batteryName app:app];
+    
     //Iterate through all local calendar entries and remove the existing one for this battery if it exists
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
@@ -55,15 +75,8 @@
     NSPredicate *pred = [eventStore predicateForEventsWithStartDate:startDate endDate:endDate calendars:nil];
     NSArray *calendarEntries = [eventStore eventsMatchingPredicate:pred];
     
-    for(EKEvent *eve in calendarEntries)
-    {
-        //If an entry is found that starts with the battery name remove it.
-        if([eve.title hasPrefix:(batteryName)])
-        {
-            NSError *err;
-            [eventStore removeEvent:eve span:EKSpanThisEvent commit:YES error:&err];
-        }
-    }
+    [[self class] removeCalendar:batteryName eventStore:eventStore calendarEntries:calendarEntries];
+
     
     //Create the event
     EKEvent *event = [EKEvent eventWithEventStore:eventStore];
@@ -78,27 +91,30 @@
 
 }
 
--(void) batteryCharge:(NSString *)batteryName
++(void) removeNotification:(NSString*)batteryName app:(UIApplication*)app
 {
-    //retreive config
-    configManager *mgr = [[configManager alloc] init];
-    ConfigInfo *ci = mgr.config;
+    NSArray *notifications = [app scheduledLocalNotifications];
     
-    //Make the notify date
-    NSDateComponents *dateComp = [[NSDateComponents alloc]init];
-    dateComp.day = [ci.noDaysToNotify intValue];
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDate *notDate = [cal dateByAddingComponents:dateComp toDate:[NSDate date] options:0];
-    
-    //Determine which option is selected on how to be notified
-    if([ci.notificationType isEqual: @"calendar"])
+    for(UILocalNotification *localNot in notifications)
     {
-        [[self class] calendarBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
+        if([localNot.alertBody hasPrefix:(batteryName)])
+        {
+            [app cancelLocalNotification:(localNot)];
+        }
     }
-    if([ci.notificationType isEqual: @"notification"])
-    {
-        [[self class] notifyBatteryCharge:[NSString stringWithFormat:@"%@ needs to be charged!!!!",batteryName] whenToNotify:notDate];
-    }
-    
 }
+
++(void) removeCalendar:(NSString *)batteryName eventStore:(EKEventStore*)eventStore calendarEntries:(NSArray*)calendarEntries
+{
+    for(EKEvent *eve in calendarEntries)
+    {
+        //If an entry is found that starts with the battery name remove it.
+        if([eve.title hasPrefix:(batteryName)])
+        {
+            NSError *err;
+            [eventStore removeEvent:eve span:EKSpanThisEvent commit:YES error:&err];
+        }
+    }
+}
+
 @end

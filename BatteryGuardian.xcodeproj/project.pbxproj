@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2AC1C6F616F919DA00D58A53 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC1C6F516F919DA00D58A53 /* CoreData.framework */; };
 		2AC1C6F916F91D4900D58A53 /* BatteryGuardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1C6F716F91D4900D58A53 /* BatteryGuardian.xcdatamodeld */; };
+		D30BE478171078D8006DB119 /* ViewCalendarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30BE477171078D8006DB119 /* ViewCalendarsViewController.m */; };
+		D30BE47B17107E0A006DB119 /* NotificationViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30BE47A17107E0A006DB119 /* NotificationViewerViewController.m */; };
 		D395ABB91707F27800E1C752 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395ABB71707F27800E1C752 /* EventKit.framework */; };
 		D395ABBA1707F27800E1C752 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D395ABB81707F27800E1C752 /* EventKitUI.framework */; };
 		D3A7FB9016F5817C006BA947 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A7FB8F16F5817C006BA947 /* UIKit.framework */; };
@@ -35,6 +37,8 @@
 		D3B5EE7916F587FE0050F057 /* AllBatteriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE7816F587FE0050F057 /* AllBatteriesViewController.m */; };
 		D3B5EE8516F589530050F057 /* MessageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8416F589530050F057 /* MessageCenter.m */; };
 		D3B5EE8816F58A300050F057 /* AddEditBatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */; };
+		D3B983D3170F1DDE001B7297 /* hiddenViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B983D2170F1DDE001B7297 /* hiddenViewViewController.m */; };
+		D3B983D5170F4EE5001B7297 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3B983D4170F4EE5001B7297 /* Settings.bundle */; };
 		D3BBC7361708125100E6E4A2 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7341708125100E6E4A2 /* 20-gear2.png */; };
 		D3BBC7371708125100E6E4A2 /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7351708125100E6E4A2 /* 53-house.png */; };
 		D3BBC7391708131800E6E4A2 /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BBC7381708131800E6E4A2 /* 44-shoebox.png */; };
@@ -59,6 +63,10 @@
 /* Begin PBXFileReference section */
 		2AC1C6F516F919DA00D58A53 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2AC1C6F816F91D4900D58A53 /* BatteryGuardian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatteryGuardian.xcdatamodel; sourceTree = "<group>"; };
+		D30BE476171078D8006DB119 /* ViewCalendarsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCalendarsViewController.h; sourceTree = "<group>"; };
+		D30BE477171078D8006DB119 /* ViewCalendarsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCalendarsViewController.m; sourceTree = "<group>"; };
+		D30BE47917107E0A006DB119 /* NotificationViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewerViewController.h; sourceTree = "<group>"; };
+		D30BE47A17107E0A006DB119 /* NotificationViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewerViewController.m; sourceTree = "<group>"; };
 		D395ABB71707F27800E1C752 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		D395ABB81707F27800E1C752 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		D3A7FB8C16F5817C006BA947 /* BatteryGuardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryGuardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +102,9 @@
 		D3B5EE8416F589530050F057 /* MessageCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCenter.m; sourceTree = "<group>"; };
 		D3B5EE8616F58A2F0050F057 /* AddEditBatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEditBatteryViewController.h; sourceTree = "<group>"; };
 		D3B5EE8716F58A300050F057 /* AddEditBatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEditBatteryViewController.m; sourceTree = "<group>"; };
+		D3B983D1170F1DDE001B7297 /* hiddenViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hiddenViewViewController.h; sourceTree = "<group>"; };
+		D3B983D2170F1DDE001B7297 /* hiddenViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hiddenViewViewController.m; sourceTree = "<group>"; };
+		D3B983D4170F4EE5001B7297 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D3BBC7341708125100E6E4A2 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		D3BBC7351708125100E6E4A2 /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		D3BBC7381708131800E6E4A2 /* 44-shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44-shoebox.png"; sourceTree = "<group>"; };
@@ -137,6 +148,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30BE48217110727006DB119 /* HiddenStuff */ = {
+			isa = PBXGroup;
+			children = (
+				D3B983D1170F1DDE001B7297 /* hiddenViewViewController.h */,
+				D3B983D2170F1DDE001B7297 /* hiddenViewViewController.m */,
+				D30BE47917107E0A006DB119 /* NotificationViewerViewController.h */,
+				D30BE47A17107E0A006DB119 /* NotificationViewerViewController.m */,
+				D30BE476171078D8006DB119 /* ViewCalendarsViewController.h */,
+				D30BE477171078D8006DB119 /* ViewCalendarsViewController.m */,
+			);
+			name = HiddenStuff;
+			sourceTree = "<group>";
+		};
 		D3A7FB8316F5817C006BA947 = {
 			isa = PBXGroup;
 			children = (
@@ -173,12 +197,14 @@
 		D3A7FB9516F5817C006BA947 /* BatteryGuardian */ = {
 			isa = PBXGroup;
 			children = (
+				D30BE48217110727006DB119 /* HiddenStuff */,
 				FEF78AC6170BBD79004C980A /* BatteryGuardianContext.h */,
 				FEF78AC7170BBD79004C980A /* BatteryGuardianContext.m */,
 				D3C7D818170804CB00D06DB1 /* Images */,
 				D3A7FB9E16F5817C006BA947 /* BatteryGuardianAppDelegate.h */,
 				D3A7FB9F16F5817C006BA947 /* BatteryGuardianAppDelegate.m */,
 				D3A7FBA716F5817C006BA947 /* MainStoryboard_iPhone.storyboard */,
+				D3B983D4170F4EE5001B7297 /* Settings.bundle */,
 				D3C7D8151707F9A400D06DB1 /* configViewController.h */,
 				D3C7D8161707F9A400D06DB1 /* configViewController.m */,
 				D3B5EE8316F589530050F057 /* MessageCenter.h */,
@@ -335,6 +361,7 @@
 				D3BBC7361708125100E6E4A2 /* 20-gear2.png in Resources */,
 				D3BBC7371708125100E6E4A2 /* 53-house.png in Resources */,
 				D3BBC7391708131800E6E4A2 /* 44-shoebox.png in Resources */,
+				D3B983D5170F4EE5001B7297 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +408,9 @@
 				D3BBC73C1708771000E6E4A2 /* configManager.m in Sources */,
 				D3BBC74317095A4000E6E4A2 /* ConfigInfo.m in Sources */,
 				FEF78AC8170BBD79004C980A /* BatteryGuardianContext.m in Sources */,
+				D3B983D3170F1DDE001B7297 /* hiddenViewViewController.m in Sources */,
+				D30BE478171078D8006DB119 /* ViewCalendarsViewController.m in Sources */,
+				D30BE47B17107E0A006DB119 /* NotificationViewerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

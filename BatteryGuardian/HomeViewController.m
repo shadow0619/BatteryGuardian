@@ -6,14 +6,16 @@
 //
 //
 
+#import <UIKit/UIKit.h>
 #import "HomeViewController.h"
+#import "hiddenViewViewController.h"
 
 @interface HomeViewController ()
+
 
 @end
 
 @implementation HomeViewController
-@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:YES];
+    /*
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedGesture:)];
+    swipeGesture.numberOfTouchesRequired = 1;
+    swipeGesture.direction = (UISwipeGestureRecognizerDirectionUp);
+    [self.view addGestureRecognizer:swipeGesture];
+*/
+}
+
+
+-(IBAction) swipedGesture:(id)sender
+{
+    NSLog(@"swiped");
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,5 +50,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

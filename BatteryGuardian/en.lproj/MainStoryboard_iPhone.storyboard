@@ -9,7 +9,7 @@
             <objects>
                 <viewController title="Home" id="2" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Home View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
@@ -20,17 +20,171 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qxj-1L-2Yh"/>
                             <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ty9-wx-CyI"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="159" id="dtd-RA-hOY"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KwX-TC-Uyv" appends="YES" id="fe1-yk-bHy"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="7"/>
+                    <navigationItem key="navigationItem" id="ynF-9E-3P2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" numberOfTouchesRequired="2" id="KwX-TC-Uyv">
+                    <connections>
+                        <action selector="swipedGesture:" destination="2" id="I4V-Fe-Ok7"/>
+                        <segue destination="X3A-VX-mTQ" kind="push" id="MgQ-AS-WvB"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="1163" y="-514"/>
+        </scene>
+        <!--Hidden View View Controller-->
+        <scene sceneID="g3H-sG-YWJ">
+            <objects>
+                <viewController id="X3A-VX-mTQ" customClass="hiddenViewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyk-Lo-iCo">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfj-6Q-YWr">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Old Config">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="owO-iS-bJR" kind="push" id="q1i-Oa-HY0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9z-DW-KcF">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Calendar Viewer">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="j6t-6e-h0X" kind="push" id="Ah8-mC-Gna"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DW-B3-5MD">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Notification Viewer">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bwy-mo-C4e" kind="push" id="8U7-be-Zid"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cfj-6Q-YWr" firstAttribute="leading" secondItem="vyk-Lo-iCo" secondAttribute="leading" constant="73" id="1Op-QB-tS3"/>
+                            <constraint firstItem="7DW-B3-5MD" firstAttribute="top" secondItem="vyk-Lo-iCo" secondAttribute="top" constant="178" id="6OP-Dy-Fej"/>
+                            <constraint firstItem="cfj-6Q-YWr" firstAttribute="top" secondItem="vyk-Lo-iCo" secondAttribute="top" constant="40" id="889-JF-dtD"/>
+                            <constraint firstItem="7DW-B3-5MD" firstAttribute="leading" secondItem="a9z-DW-KcF" secondAttribute="leading" type="default" id="RAP-yd-ZxP"/>
+                            <constraint firstItem="a9z-DW-KcF" firstAttribute="leading" secondItem="cfj-6Q-YWr" secondAttribute="leading" type="default" id="d47-lv-Wg8"/>
+                            <constraint firstItem="a9z-DW-KcF" firstAttribute="top" secondItem="vyk-Lo-iCo" secondAttribute="top" constant="110" id="mhp-bK-oHm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hFI-qb-wT3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zxy-Lz-OL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786" y="-837"/>
+        </scene>
+        <!--View Calendars View Controller-->
+        <scene sceneID="e8c-pc-WXv">
+            <objects>
+                <tableViewController id="j6t-6e-h0X" customClass="ViewCalendarsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6X0-UV-FFE">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ngP-OU-aH9" detailTextLabel="Z41-9A-5g1" style="IBUITableViewCellStyleSubtitle" id="hLi-2M-0Z9">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngP-OU-aH9">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z41-9A-5g1">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CbK-CP-LpG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBe-ml-9RE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="-844"/>
+        </scene>
+        <!--Notification Viewer View Controller-->
+        <scene sceneID="I8n-P4-cCg">
+            <objects>
+                <tableViewController id="Bwy-mo-C4e" customClass="NotificationViewerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MmN-zE-3LK">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="z1S-Va-3Ny" detailTextLabel="cJP-fR-KBj" style="IBUITableViewCellStyleSubtitle" id="jLz-7d-7ur">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1S-Va-3Ny">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-fR-KBj">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bwy-mo-C4e" id="AhY-rT-faN"/>
+                            <outlet property="delegate" destination="Bwy-mo-C4e" id="2P5-Tk-siK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Xwc-wN-vYN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioG-0O-PMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223" y="-198"/>
         </scene>
         <!--Navigation Controller - All Batteries-->
         <scene sceneID="3dx-pi-DMy">
@@ -54,7 +208,7 @@
             <objects>
                 <viewController id="owO-iS-bJR" customClass="configViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="892-wI-cML">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ypT-CT-kL9">
@@ -106,6 +260,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Config" image="20-gear2.png" id="YOs-gK-GBN"/>
+                    <navigationItem key="navigationItem" id="Kzd-F5-0eO"/>
                     <connections>
                         <outlet property="lblNotifyDays" destination="mCq-pJ-5uu" id="2bq-55-EKi"/>
                         <outlet property="segNotificationType" destination="ypT-CT-kL9" id="MlO-GI-DiQ"/>
@@ -114,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vio-9n-xwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="1217"/>
+            <point key="canvasLocation" x="2241" y="-1551"/>
         </scene>
         <!--All Batteries View Controller-->
         <scene sceneID="a0e-jQ-5ir">
@@ -152,7 +307,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdA-ru-ibd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="407"/>
+            <point key="canvasLocation" x="1292" y="475"/>
         </scene>
         <!--Add Edit Battery View Controller-->
         <scene sceneID="K9H-dX-ze0">
@@ -264,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4B-Hz-YSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="291"/>
+            <point key="canvasLocation" x="1992" y="451"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -277,14 +432,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="EDj-HY-EHO" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="PiL-E5-BQL" kind="relationship" relationship="viewControllers" id="bVp-vw-4xW"/>
-                        <segue destination="owO-iS-bJR" kind="relationship" relationship="viewControllers" id="7KF-Dx-bQL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="gbi-gi-kC5">
+            <objects>
+                <navigationController id="EDj-HY-EHO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="53-house.png" id="7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vh4-GW-5RY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="fs1-Vl-Ate"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4Q-MF-Rf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="-450"/>
         </scene>
     </scenes>
     <resources>
@@ -298,8 +471,6 @@
             <relationships>
                 <relationship kind="action" name="cmdCharged_clicked:"/>
                 <relationship kind="action" name="cmdSave_Clicked:"/>
-                <relationship kind="action" name="removeKeyboard:"/>
-                <relationship kind="action" name="tapBackground:"/>
             </relationships>
         </class>
         <class className="AllBatteriesViewController" superclassName="UITableViewController">
@@ -314,6 +485,12 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NotificationViewerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotificationViewerViewController.h"/>
+        </class>
+        <class className="ViewCalendarsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewCalendarsViewController.h"/>
+        </class>
         <class className="configViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/configViewController.h"/>
             <relationships>
@@ -323,6 +500,9 @@
                 <relationship kind="outlet" name="segNotificationType" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="sldNotifyDays" candidateClass="UISlider"/>
             </relationships>
+        </class>
+        <class className="hiddenViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/hiddenViewViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

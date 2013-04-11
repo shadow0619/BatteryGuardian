@@ -10,10 +10,11 @@
 #import <EventKit/EventKit.h>
 #import "configManager.h"
 #import "ConfigInfo.h"
+
 @interface MessageCenter()
 
--(void) removeNotification:(NSString*)batteryName app:(UIApplication*)app;
--(void) removeCalendar:(NSString *)batteryName eventStore:(EKEventStore*)eventStore calendarEntries:(NSArray*)calendarEntries;
++(void) removeNotification:(NSString*)batteryName app:(UIApplication*)app;
++(void) removeCalendar:(NSString *)batteryName eventStore:(EKEventStore*)eventStore calendarEntries:(NSArray*)calendarEntries;
 
 @end
 

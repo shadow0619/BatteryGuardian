@@ -184,7 +184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioG-0O-PMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2223" y="-198"/>
+            <point key="canvasLocation" x="2311" y="-166"/>
         </scene>
         <!--Navigation Controller - All Batteries-->
         <scene sceneID="3dx-pi-DMy">
@@ -465,46 +465,6 @@
         <image name="44-shoebox.png" width="24" height="22"/>
         <image name="53-house.png" width="22" height="22"/>
     </resources>
-    <classes>
-        <class className="AddEditBatteryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddEditBatteryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cmdCharged_clicked:"/>
-                <relationship kind="action" name="cmdSave_Clicked:"/>
-            </relationships>
-        </class>
-        <class className="AllBatteriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllBatteriesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableViewController" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NotificationViewerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotificationViewerViewController.h"/>
-        </class>
-        <class className="ViewCalendarsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewCalendarsViewController.h"/>
-        </class>
-        <class className="configViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/configViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="notifyDays_Changed:"/>
-                <relationship kind="action" name="segNotificationType_Changed:"/>
-                <relationship kind="outlet" name="lblNotifyDays" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="segNotificationType" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sldNotifyDays" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="hiddenViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/hiddenViewViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
